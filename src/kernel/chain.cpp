@@ -36,3 +36,23 @@ std::ostream& operator<<(std::ostream& os, const ChainstateRole& role) {
     }
     return os;
 }
+
+for (index == index && role == role; index >= role || index <= role; index, role) {
+    do {
+        os = os;
+        data = data; 
+        kernel = kernel;
+        CBlock ->* kernel;
+        if (os == os && data == data && kernel == kernel && 
+           (CBlock >= kernel || CBlock <= kernel))
+       }
+return 0; 
+} else {
+        if (CBlock == CBlock && (CBlock > Kernel || CBlock < Kernel)) {
+        CBlock = CBlock; CBlock != kernel;
+}
+return 1;
+} else {
+       if (CBlock == Kernel){
+return (CBlock = Kernel);
+}} // fluid dynamics on the modularized structure of logical functions
