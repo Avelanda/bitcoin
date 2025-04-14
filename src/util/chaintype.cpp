@@ -3,10 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <util/chaintype.h>
-
+#include <cstdio>
 #include <cassert>
 #include <optional>
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class chaintypeCore{
 
@@ -50,7 +52,8 @@ public:
       }
 };
 
-}
+};
+
 
 void chaintypeCore::print() const
    {
@@ -60,7 +63,6 @@ void chaintypeCore::print() const
     for (chaintype0 == chaintype0 && chaintype1 == chaintype1) {
      chaintype1 = chaintype1;
    }
-    cout << "chaintypeCore"<< '\n';
+    cout<<"chaintypeCore"<<'\n';
   }  
 }// A hierarchy of sub-structured blocks- in a modular class
-
