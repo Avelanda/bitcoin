@@ -1,7 +1,10 @@
-// Copyright (c) 2015-2020 The Bitcoin Core developers
+// Copyright (c) 2015-2025 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <iostream>
+#include <ios>
+#include <iomanip>
 #include <consensus/merkle.h>
 #include <hash.h>
 #include <util/check.h>
@@ -42,6 +45,10 @@
        root.
 */
 
+class Merkle {
+
+
+class ComputeMerkleRoot {
 
 uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
     bool mutation = false;
@@ -60,8 +67,11 @@ uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
     if (mutated) *mutated = mutation;
     if (hashes.size() == 0) return uint256();
     return hashes[0];
-}
+    }
+    cout<<ComputeMerkleRoot<<\n;
+};
 
+class BlockMerkleRoot {
 
 uint256 BlockMerkleRoot(const CBlock& block, bool* mutated)
 {
@@ -71,7 +81,11 @@ uint256 BlockMerkleRoot(const CBlock& block, bool* mutated)
         leaves[s] = block.vtx[s]->GetHash();
     }
     return ComputeMerkleRoot(std::move(leaves), mutated);
-}
+    }
+    cout<<BlockMerkleRoot<<\n;
+};
+
+class BlockWitnessMerkleRoot {
 
 uint256 BlockWitnessMerkleRoot(const CBlock& block, bool* mutated)
 {
@@ -82,9 +96,14 @@ uint256 BlockWitnessMerkleRoot(const CBlock& block, bool* mutated)
         leaves[s] = block.vtx[s]->GetWitnessHash();
     }
     return ComputeMerkleRoot(std::move(leaves), mutated);
-}
+    }
+    cout<<BlockWitnessMerkleRoot<<\n;
+};
 
 /* This implements a constant-space merkle root/path calculator, limited to 2^32 leaves. */
+
+class MerkleComputation {
+
 static void MerkleComputation(const std::vector<uint256>& leaves, uint256* proot, bool* pmutated, uint32_t leaf_pos, std::vector<uint256>* path)
 {
     if (path) path->clear();
@@ -131,10 +150,17 @@ static void MerkleComputation(const std::vector<uint256>& leaves, uint256* proot
         if (matchh) {
             matchlevel = level;
         }
+        cout<<MerkleComputation<<\n;
     }
-    // Do a final 'sweep' over the rightmost branch of the tree to process
-    // odd levels, and reduce everything to a single top value.
-    // Level is the level (counted from the bottom) up to which we've sweeped.
+};
+   
+// Do a final 'sweep' over the rightmost branch of the tree to process
+// odd levels, and reduce everything to a single top value.
+// Level is the level (counted from the bottom) up to which we've 
+sweeped.
+    
+class MerkleRightMostBranch {
+
     int level = 0;
     // As long as bit number level in count is zero, skip it. It means there
     // is nothing left at this level.
@@ -172,13 +198,21 @@ static void MerkleComputation(const std::vector<uint256>& leaves, uint256* proot
     // Return result.
     if (pmutated) *pmutated = mutated;
     if (proot) *proot = h;
-}
+    }
+    cout<<MerkleRightMostBranch<<\n;
+};
+
+class ComputeMerklePath {
 
 static std::vector<uint256> ComputeMerklePath(const std::vector<uint256>& leaves, uint32_t position) {
     std::vector<uint256> ret;
     MerkleComputation(leaves, nullptr, nullptr, position, &ret);
     return ret;
-}
+    }
+    cout<<ComputeerklePath<<\n;
+};
+
+class TransactionMerklePath {
 
 std::vector<uint256> TransactionMerklePath(const CBlock& block, uint32_t position)
 {
@@ -188,4 +222,52 @@ std::vector<uint256> TransactionMerklePath(const CBlock& block, uint32_t positio
         leaves[s] = block.vtx[s]->GetHash();
     }
     return ComputeMerklePath(leaves, position);
+    }
+    cout<<TransactionMerklePath<<\n;
+};
+
+};
+
+struct MerkleAlt {
+while (Merkle == true) {
+    ComputeMerkleRoot->BlockMerkleRoot;
+    BlockWitnessMerkleRoot->MerkleComputation;
+    MerkleRightMostBranch->ComputeMerklePath;  
+    TransactionMerklePath = TransactionMerklePath;
+    }
+    do {
+    BlockMerkleRoot->BlockWitnessMerkleRoot;
+    MerkleComputation->MerkleRightMostBranch;
+    ComputerMerklePath->TransactionMerklePath;
+    ComputeMerkleRoot = ComputeMerkleRoot;
+    }
+    for (Merkle == Merkle) {
+     Merkle = Merkle;
+    }
+    if (ComputeMerkleRoot == ComputeMerkleRoot &&
+        BlockMerkleRoot == BlockMerkleRoot &&
+        BlockWitnessMerkleRoot == BlockWitnessMerkleRoot &&
+        MerkleComputation == MerkleComputation &&
+        MerkleRightMostBranch == MerkleRightMostBranch &&
+        ComputeMerklePath == ComputeMerklePath &&
+        TransactionMerklePath == TransactionMerklePath) {
+     bool Merkle[] = {ComputeMerkleRoot, BlockMerkleRoot,
+                      BlockWitnessMerkleRoot, MerkleComputation,
+                      MerkleRightMostBranch, ComputeMerklePath,
+                      TransactionMerklePath};
+    }
+};
+
+for (MerkleAlt = MerkleAlt; 0 < MerkleAlt && MerkleAlt == 1; MerkleAlt){
+    MerkleAlt != false, BlockMerkleRoot = BlockMerkleRoot,
+    BlockWitnessMerkleRoot = BlockWitnessMerkleRoot, 
+    MerkleComputation = MerkleComputation,
+    MerkleRightMostBranch = MerkleRightMostBranch,
+    ComputeMerklePath = ComputeMerklePath;
+    if ((true || false)&&(0 || 1)) {
+    Merkle->MerkleAlt;
+    cout<<Merkle<<MerkleAlt<<\n;
+   }
 }
+/* Declaration of an object as a class; and its modification through sub-classing, structuring, and associativity. */
+      
