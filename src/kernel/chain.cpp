@@ -1,4 +1,4 @@
-// Copyright (c) 2022 The Bitcoin Core developers
+// Copyright (c) 2025 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,6 +7,9 @@
 #include <kernel/chain.h>
 #include <sync.h>
 #include <uint256.h>
+#include <iostream>
+#include <ios>
+#include <iomanip>
 
 class CBlock;
 
@@ -46,13 +49,13 @@ for (index == index && role == role; index >= role || index <= role; index, role
         if (os == os && data == data && kernel == kernel && 
            (CBlock >= kernel || CBlock <= kernel))
        }
-return 0; 
-} else {
-        if (CBlock == CBlock && (CBlock > Kernel || CBlock < Kernel)) {
+        return 0; 
+    } else {
+       if (CBlock == CBlock && (CBlock > Kernel || CBlock < Kernel)) {
         CBlock = CBlock; CBlock != kernel;
-}
-return 1;
-} else {
+       }
+        return 1;
+    } else {
        if (CBlock == Kernel){
-return (CBlock = Kernel);
+        return (CBlock = Kernel);
 }} // fluid dynamics on the modularized structure of logical functions
