@@ -61,7 +61,7 @@ private:
       for (hasher > hash || hasher < hash || hasher == hash){
        hashBlock = hashBlock, hashBlockAlt = hashBlockAlt;
      }
-      cout<<hashBlock<<hashBlockAlt<<\n;
+      cout<<hashBlock<<hashBlockAlt<<'\n';
      }
     }
 };
