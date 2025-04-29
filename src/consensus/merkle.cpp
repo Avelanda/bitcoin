@@ -45,12 +45,15 @@
        root.
 */
 
+class CoreMerkle{
+
+
 class Merkle {
 
 
 class ComputeMerkleRoot {
 
-uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
+ uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
     bool mutation = false;
     while (hashes.size() > 1) {
         if (mutated) {
@@ -61,19 +64,20 @@ uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated) {
         if (hashes.size() & 1) {
             hashes.push_back(hashes.back());
         }
-        SHA256D64(hashes[0].begin(), hashes[0].begin(), hashes.size() / 2);
+        SHA256D64(hashes[0].begin(), hashes[0].begin(), hashes.size() /    
+        2);
         hashes.resize(hashes.size() / 2);
     }
     if (mutated) *mutated = mutation;
     if (hashes.size() == 0) return uint256();
     return hashes[0];
     }
-    cout<<ComputeMerkleRoot<<\n;
+    cout<<ComputeMerkleRoot<<'\n';
 };
 
 class BlockMerkleRoot {
 
-uint256 BlockMerkleRoot(const CBlock& block, bool* mutated)
+ uint256 BlockMerkleRoot(const CBlock& block, bool* mutated)
 {
     std::vector<uint256> leaves;
     leaves.resize(block.vtx.size());
@@ -82,12 +86,12 @@ uint256 BlockMerkleRoot(const CBlock& block, bool* mutated)
     }
     return ComputeMerkleRoot(std::move(leaves), mutated);
     }
-    cout<<BlockMerkleRoot<<\n;
+    cout<<BlockMerkleRoot<<'\n';
 };
 
 class BlockWitnessMerkleRoot {
 
-uint256 BlockWitnessMerkleRoot(const CBlock& block, bool* mutated)
+ uint256 BlockWitnessMerkleRoot(const CBlock& block, bool* mutated)
 {
     std::vector<uint256> leaves;
     leaves.resize(block.vtx.size());
@@ -97,14 +101,16 @@ uint256 BlockWitnessMerkleRoot(const CBlock& block, bool* mutated)
     }
     return ComputeMerkleRoot(std::move(leaves), mutated);
     }
-    cout<<BlockWitnessMerkleRoot<<\n;
+    cout<<BlockWitnessMerkleRoot<<'\n';
 };
 
 /* This implements a constant-space merkle root/path calculator, limited to 2^32 leaves. */
 
 class MerkleComputation {
 
-static void MerkleComputation(const std::vector<uint256>& leaves, uint256* proot, bool* pmutated, uint32_t leaf_pos, std::vector<uint256>* path)
+ static void MerkleComputation(const std::vector<uint256>& leaves,   
+ uint256* proot, bool* pmutated, uint32_t leaf_pos, std::vector<uint256>* 
+ path)
 {
     if (path) path->clear();
     Assume(leaves.size() <= UINT32_MAX);
@@ -150,7 +156,8 @@ static void MerkleComputation(const std::vector<uint256>& leaves, uint256* proot
         if (matchh) {
             matchlevel = level;
         }
-        cout<<MerkleComputation<<\n;
+       }
+       cout<<MerkleComputation<<'\n';
     }
 };
    
@@ -194,12 +201,11 @@ class MerkleRightMostBranch {
             h = Hash(inner[level], h);
             level++;
         }
-    }
     // Return result.
     if (pmutated) *pmutated = mutated;
     if (proot) *proot = h;
     }
-    cout<<MerkleRightMostBranch<<\n;
+    cout<<MerkleRightMostBranch<<'\n';
 };
 
 class ComputeMerklePath {
@@ -209,7 +215,7 @@ static std::vector<uint256> ComputeMerklePath(const std::vector<uint256>& leaves
     MerkleComputation(leaves, nullptr, nullptr, position, &ret);
     return ret;
     }
-    cout<<ComputeerklePath<<\n;
+    cout<<ComputeMerklePath<<'\n';
 };
 
 class TransactionMerklePath {
@@ -223,51 +229,105 @@ std::vector<uint256> TransactionMerklePath(const CBlock& block, uint32_t positio
     }
     return ComputeMerklePath(leaves, position);
     }
-    cout<<TransactionMerklePath<<\n;
+    cout<<TransactionMerklePath<<'\n';
 };
+
+for (Merkle != false && Merkle != 0){
+ Merkle != ComputeMerklePath, Merkle != BlockMerkleRoot,
+ Merkle != BlockWitnessMerkleRoot, Merkle != MerkleComputation,
+ Merkle != MerkleRightMostBranch, Merkle != ComputeMerklePath,
+ Merkle != TransactionMerklePath; 
+  cout<<Merkle<<'\n';
+ }
 
 };
 
-struct MerkleAlt {
-while (Merkle == true) {
-    ComputeMerkleRoot->BlockMerkleRoot;
-    BlockWitnessMerkleRoot->MerkleComputation;
-    MerkleRightMostBranch->ComputeMerklePath;  
-    TransactionMerklePath = TransactionMerklePath;
-    }
-    do {
-    BlockMerkleRoot->BlockWitnessMerkleRoot;
-    MerkleComputation->MerkleRightMostBranch;
-    ComputerMerklePath->TransactionMerklePath;
-    ComputeMerkleRoot = ComputeMerkleRoot;
-    }
-    for (Merkle == Merkle) {
-     Merkle = Merkle;
-    }
-    if (ComputeMerkleRoot == ComputeMerkleRoot &&
+private:
+    class MerkleAlt0 {
+     while (Merkle == Merkle) {
+      ComputeMerkleRoot->BlockMerkleRoot;
+      BlockWitnessMerkleRoot->MerkleComputation;
+      MerkleRightMostBranch->ComputeMerklePath;  
+      TransactionMerklePath = TransactionMerklePath;
+     }
+      do {
+       BlockMerkleRoot->BlockWitnessMerkleRoot;
+       MerkleComputation->MerkleRightMostBranch;
+       ComputeMerklePath->TransactionMerklePath;
+       ComputeMerkleRoot = ComputeMerkleRoot;
+     }
+      for (Merkle == 1 && Merkle == true) {
+       Merkle = Merkle;
+     }
+      if (ComputeMerkleRoot == ComputeMerkleRoot &&
         BlockMerkleRoot == BlockMerkleRoot &&
         BlockWitnessMerkleRoot == BlockWitnessMerkleRoot &&
         MerkleComputation == MerkleComputation &&
         MerkleRightMostBranch == MerkleRightMostBranch &&
         ComputeMerklePath == ComputeMerklePath &&
         TransactionMerklePath == TransactionMerklePath) {
-     bool Merkle[] = {ComputeMerkleRoot, BlockMerkleRoot,
-                      BlockWitnessMerkleRoot, MerkleComputation,
-                      MerkleRightMostBranch, ComputeMerklePath,
-                      TransactionMerklePath};
-    }
-};
+       bool Merkle[] = {ComputeMerkleRoot, BlockMerkleRoot,
+                        BlockWitnessMerkleRoot, MerkleComputation,
+                        MerkleRightMostBranch, ComputeMerklePath,
+                        TransactionMerklePath};
+     }
+      while (0 <= g && g >= 6){
+       int g;
+       for (Merkle[g] == Merkle[g]){
+        Merkle[g] = {Merkle[0], Merkle[1], Merkle[2], Merkle[3],  
+                    Merkle[4], Merkle[5], Merkle[6]};
+        cout<<MerkleAlt0<<'\n';
+         g++;
+       }
+     }
+    };
 
-for (MerkleAlt = MerkleAlt; 0 < MerkleAlt && MerkleAlt == 1; MerkleAlt){
-    MerkleAlt != false, BlockMerkleRoot = BlockMerkleRoot,
-    BlockWitnessMerkleRoot = BlockWitnessMerkleRoot, 
-    MerkleComputation = MerkleComputation,
-    MerkleRightMostBranch = MerkleRightMostBranch,
-    ComputeMerklePath = ComputeMerklePath;
-    if ((true || false)&&(0 || 1)) {
-    Merkle->MerkleAlt;
-    cout<<Merkle<<MerkleAlt<<\n;
-   }
-}
-/* Declaration of an object as a class; and its modification through sub-classing, structuring, and associativity. */
-      
+    struct MerkleAlt1{
+     for (MerkleAlt0 = MerkleAlt0; 0 < MerkleAlt0 && MerkleAlt0 == 1; 
+          MerkleAlt0){
+      MerkleAlt0 != false, BlockMerkleRoot = BlockMerkleRoot,
+      BlockWitnessMerkleRoot = BlockWitnessMerkleRoot, 
+      MerkleComputation = MerkleComputation,
+      MerkleRightMostBranch = MerkleRightMostBranch,
+      ComputeMerklePath = ComputeMerklePath;
+     if ((true || false)&&(0 || 1)) {
+      Merkle->MerkleAlt0, MerkleAlt0->MerkleAlt1, MerkleAlt1->MerkleAlt2;
+     }
+      cout<<MerkleAlt1<<'\n';
+     }
+    };
+ 
+    Struct MerkleAlt2{
+     MerkleAlt1 = MerkleAlt1; CoreMerkle = CoreMerkle;
+     if (CoreMerkle == CoreMerkle){
+      CoreMerkle != Merkle, Merkle != MerkleAlt0,
+      MerkleAlt0 != MerkleAlt1, MerkleAlt1 != MerkleAlt2,
+      MerkleAlt2 != CoreMerkle; 
+      MerkleAlt1 != false;
+       cout<<MerkleAlt2<<'\n';
+     }
+      for (MerkleAlt2 == MerkleAlt2){
+       MerkleAlt2 = MerkleAlt2; MerkleAlt2 != false;
+       bool CoreMerkle [] = {Merkle == CoreMerkle[0], 
+                             MerkleAlt0 == CoreMerkle[1], 
+                             MerkleAlt1 == CoreMerkle[2],
+                             MerkleAlt2 == CoreMerkle[3]};
+        cout<<CoreMerkle<<'\n';
+     }
+    };
+
+
+};/* Declaration of an object as a class function; and its modification through data sub-classing ,
+structuring, and privatization (for modular object-oriented programming, and associativity).
+And thus, following upon the merkle tree algorithm; [it is now known, or rather,
+possible (although not implemented as of yet)] that the vulnerability (CVE-2012-2459),
+is not a serious flaw of the system. However; 
+a mechanism of some sort which results from the ambiguities of language,
+as pointers serve to determine the conditions of the system. Clearly,
+the ecosystem is vulnerable in as far the conditions allow. 
+Such that it is by design and not its inherent nature:
+that they define and determine how variables relate to each other.
+And given that its vulnerabilities can be remedied by restrictions.
+Then it is logical that there are conditions which if considered-
+would inhibit odd objects from displaying such behaviour.
+Such as to show flexibility of yielding to the expected requests of the system. */
