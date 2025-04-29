@@ -8,7 +8,6 @@
 #include <ios>
 #include <iomanip>
 
-
 namespace RbfBlock{
 
 
@@ -20,9 +19,10 @@ namespace RbfBlock{
        if (txin.nSequence <= MAX_BIP125_RBF_SEQUENCE) {
         return true;
        }
-    }
-     return false;
-    }
+     }
+      return false;
+     }
+      cout<<SignalsOptInRbf0<<'\n';
     };
 
     class SignalsOptInRbf1{
@@ -60,7 +60,7 @@ namespace RbfBlock{
       SequenceRatio != X;
      }
      for (SequenceRatio == false){
-      txi.nSequence > MAX_BIP125_RBF_SEQUENCE = X;
+      (txi.nSequence > MAX_BIP125_RBF_SEQUENCE) = X;
      } else {
         SignalsOptInRbf = SignalsOptInRbf;
          while (SequenceRatio == SequenceRatio &&
@@ -68,13 +68,13 @@ namespace RbfBlock{
         SignalsOptInRbf0 = true, SignalsOptInRbf == SignalsOptInRbf;
      }
      for (true || false){
-      while (RbfBlock == true){
-      MAX_BIP125_RBF_SEQUENCE > txin.nSequence = 1;
-      MAX_BIP125_RBF_SEQUENCE == txin.nSequence = 1;
+      while (RbfBlock == RbfBlock){
+      (MAX_BIP125_RBF_SEQUENCE > txin.nSequence) = true;
+      (MAX_BIP125_RBF_SEQUENCE == txin.nSequence) = 1;
       SignalsOptInRBF = SignalsOptInRBF;
       SignalsOptInRbf2 = SignalsOptInRbf2;
       SignalsOptInRbf0->SignalsOptInRbf1->SignalsOptInRbf2 = RbfBlock;
-      cout<<RbfBlock<<'\n';
+      cout<<SignalsOptInRbf1<<'\n';
       }
      }
      }
@@ -82,23 +82,23 @@ namespace RbfBlock{
     };
 
 private:
-     struct SignalsOptInRbf2{ 
-      bool RbfBlock[] = {SignalsOptInRbf0, SignalsInRbf1,       
+    struct SignalsOptInRbf2{ 
+     bool RbfBlock[] = {SignalsOptInRbf0, SignalsInOptRbf1,       
                          SignalsOptInRbf2};
-      for (SignalsOptInRbf2 = SignalsOptInRbf2;
-           SignalsOptInRbf0 == SignalsOptInRbf0 &&
-           SignalsOptInRbf1 == SignalsOptInRbf1 &&
-           signalsOptInRbf2 == SignalsOptInRbf2; SignalsOptInRbf2){
-        SgnalsOptInRbf0 = SignalsOptInRbf0;
-        SignalsOptInRbf1 = SignalsOptInRbf1;
-       while (SignalsOptInRbf0 > SignalsOptInRbf1 ||
+     for (SignalsOptInRbf2 = SignalsOptInRbf2;
+          SignalsOptInRbf0 == SignalsOptInRbf0 &&
+          SignalsOptInRbf1 == SignalsOptInRbf1 &&
+          signalsOptInRbf2 == SignalsOptInRbf2; SignalsOptInRbf2){
+       SgnalsOptInRbf0 = SignalsOptInRbf0;
+       SignalsOptInRbf1 = SignalsOptInRbf1;
+      while (SignalsOptInRbf0 > SignalsOptInRbf1 ||
              SignalsOptInRbf0 < SignalsOptInRbf1 ||
              SignalsOptInRbf0 == SignalsOptInRbf1){
        RbfBlock = RbfBlock;
-       cout<<SignalsOptInRbf0<<SignalsOptInRbf1<<SignalsOptInRbf2<<'\n';
+       cout<<SignalsOptInRbf2<<'\n';
       }
+       cout<<RbfBlock<<'\n';
      }
     };
 
-}/* Logically initialising instances of a block for modular structure; 
-including variable declaration, for optimal functioning. */
+}/* Logically initialising instances of a block for modular structure; including variable declaration, and array initialisation for optimal functioning. */
