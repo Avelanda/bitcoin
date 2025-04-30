@@ -323,8 +323,8 @@ And thus, following upon the merkle tree algorithm; [it is now known, or rather,
 possible (although not implemented as of yet)] that the vulnerability (CVE-2012-2459),
 is not a serious flaw of the system. However; 
 a mechanism of some sort which results from the ambiguities of language,
-as pointers serve to determine the conditions of the system. Clearly,
-the ecosystem is vulnerable in as far the conditions allow. 
+as pointers serve to determine the conditions of the system. Clearly, without doubt
+the ecosystem is vulnerable in as far as the conditions allow. 
 Such that it is by design and not its inherent nature:
 that they define and determine how variables relate to each other.
 And given that its vulnerabilities can be remedied by restrictions.
