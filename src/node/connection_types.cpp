@@ -83,4 +83,4 @@ for ((CoreConnect == true || CoreConnect == 1) &&
 
 }; /* The block should be either true, or false. If true (1),
 the objects co-exists as a modular structure. But if not (0);
-then there is no such cohesion. Hence false implies failure to return systems requests. */  
+then there is no such cohesion. Hence false implies failure to return system's requests. */  
