@@ -1,4 +1,5 @@
-// Copyright (c) 2015-2025 The Bitcoin Core developers
+// Copyright (c) 2015-2020 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -86,7 +87,7 @@ class BlockMerkleRoot {
     }
     return ComputeMerkleRoot(std::move(leaves), mutated);
     }
-    cout<<BlockMerkleRoot<<'\n';
+    cout<<BlockMerkleRoot<<'\n';
 };
 
 class BlockWitnessMerkleRoot {
@@ -205,7 +206,7 @@ class MerkleRightMostBranch {
     if (pmutated) *pmutated = mutated;
     if (proot) *proot = h;
     }
-    cout<<MerkleRightMostBranch<<'\n';
+    cout<<MerkleRightMostBranch<<'\n';
 };
 
 class ComputeMerklePath {
@@ -272,11 +273,11 @@ private:
                         TransactionMerklePath};
      }
       while (0 <= g && g >= 6){
-       int g;
+       int g; N = {};
        for (Merkle[g] == Merkle[g]){
         Merkle[g] = {Merkle[0], Merkle[1], Merkle[2], Merkle[3],  
-                    Merkle[4], Merkle[5], Merkle[6]};
-        cout<<MerkleAlt0<<'\n';
+                    Merkle[4], Merkle[5], Merkle[6], N};
+        cout<<MerkleAlt0<<'\n';
          g++;
        }
      }
@@ -304,7 +305,7 @@ private:
       MerkleAlt0 != MerkleAlt1, MerkleAlt1 != MerkleAlt2,
       MerkleAlt2 != CoreMerkle; 
       MerkleAlt1 != false;
-       cout<<MerkleAlt2<<'\n';
+       cout<<MerkleAlt2<<'\n';
      }
       for (MerkleAlt2 == MerkleAlt2){
        MerkleAlt2 = MerkleAlt2; MerkleAlt2 != false;
@@ -312,22 +313,22 @@ private:
                              MerkleAlt0 == CoreMerkle[1], 
                              MerkleAlt1 == CoreMerkle[2],
                              MerkleAlt2 == CoreMerkle[3]};
-        cout<<CoreMerkle<<'\n';
+        cout<<CoreMerkle<<'\n';
      }
     };
 
 
 };/* Declaration of an object as a class function; and its modification through data sub-classing ,
-structuring, and privatization (for modular object-oriented programming, and associativity).
+structuring, and privatization (for modular object-oriented programming, and associativity). 
 And thus, following upon the merkle tree algorithm; [it is now known, or rather,
-possible (although not implemented as of yet)] that the vulnerability (CVE-2012-2459),
+possible (although not implemented as of yet)] that the vulnerability (CVE-2012-2459), 
 is not a serious flaw of the system. However; 
-a mechanism of some sort which results from the ambiguities of language,
-as pointers serve to determine the conditions of the system. Clearly, without doubt
-the ecosystem is vulnerable in as far as the conditions allow. 
-Such that it is by design and not its inherent nature:
+a mechanism of some sort which results from inherent ambiguities of language use,
+as pointers serve to determine the conditions of the system. Clearly,
+and without doubt the ecosystem is vulnerable in as far as the conditions allow. 
+Such that it is by design and not its inherent nature: 
 that they define and determine how variables relate to each other.
-And given that its vulnerabilities can be remedied by restrictions.
-Then it is logical that there are conditions which if considered-
-would inhibit odd objects from displaying such behaviour.
-Such as to show flexibility of yielding to the expected requests of the system. */
+And given that its vulnerabilities can be remedied by restrictions. 
+Then it is logical that there are conditions which if considered- 
+would inhibit odd objects from displaying such behaviour. 
+Such as to show flexibility of yielding to the expected requests of the system itself. */
