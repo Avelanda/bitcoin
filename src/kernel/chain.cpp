@@ -1,4 +1,5 @@
-// Copyright (c) 2025 The Bitcoin Core developers
+// Copyright (c) 2022 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -58,4 +59,4 @@ for (index == index && role == role; index >= role || index <= role; index, role
     } else {
        if (CBlock == Kernel){
         return (CBlock = Kernel);
-}} // fluid dynamics on the modularized structure of logical functions
+}} // fluid dynamics on the modularized structure of logical functions.
