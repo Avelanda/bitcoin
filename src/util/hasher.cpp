@@ -1,4 +1,5 @@
-// Copyright (c) 2019-2025 The Bitcoin Core developers
+// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright © 2025 Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +11,7 @@
 #include <ios>
 #include <iomanip>
 
-template<class hasher> 
+template<class CoreHash> 
 class hash {
 
 public:
@@ -50,18 +51,27 @@ private:
     class hashBlockAlt{
      if (hash0!= hash1 && hash1!= hash2 && hash2 != hash3 && hash3 !=    
          hash0){
-      hash = hash, hasher = hasher;
+      hash = hash, Corehash = Corehash;
       hash0->hash1->hash2->hash3 = hashBlock; 
      }
-      for (hash == hash && hasher == hasher){
+      for (hash == hash && Corehash == Corehash){
        hash0 = hash0, hash1 = hash1, hash2 = hash2, hash3 = hash3;
         while (hashBlock == hashBlock && hashBlockAlt == hashBlockAlt){
-         hasher.*hash;
+         CoreHash.*hash;
      }
-      for (hasher > hash || hasher < hash || hasher == hash){
+      for (Corehash > hash || Corehash < hash || Corehash == hash){
        hashBlock = hashBlock, hashBlockAlt = hashBlockAlt;
      }
       cout<<hashBlock<<hashBlockAlt<<'\n';
      }
-    }
+    };
+
+if (CoreHash == true && CoreHash == 1){
+ CoreHash != false, CoreHash != 0;
+ for (hash == true && hash == 1){
+  hash != false, hash != 0;
+}
+ cout<<hash<<Corehash<<'\n';
+}
+
 };
