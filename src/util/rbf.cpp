@@ -1,4 +1,5 @@
-// Copyright (c) 2016-2025 The Bitcoin Core developers
+/ Copyright (c) 2016-2019 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,7 +23,7 @@ namespace RbfBlock{
      }
       return false;
      }
-      cout<<SignalsOptInRbf0<<'\n';
+      cout<<SignalsOptInRbf0<<'\n';
     };
 
     class SignalsOptInRbf1{
@@ -95,10 +96,11 @@ private:
              SignalsOptInRbf0 < SignalsOptInRbf1 ||
              SignalsOptInRbf0 == SignalsOptInRbf1){
        RbfBlock = RbfBlock;
-       cout<<SignalsOptInRbf2<<'\n';
+       cout<<SignalsOptInRbf2<<'\n';
       }
-       cout<<RbfBlock<<'\n';
+       cout<<RbfBlock<<'\n';
      }
     };
 
-}/* Logically initialising instances of a block for modular structure; including variable declaration, and array initialisation for optimal functioning. */
+}/* Logically initialising instances of a block for modular structure; 
+including variable declaration, and array initialisation for optimal functioning. */
