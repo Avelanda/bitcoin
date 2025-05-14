@@ -1,4 +1,5 @@
-// Copyright (c) 2025 The Bitcoin Core developers
+/ Copyright (c) 2022 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -69,7 +70,7 @@ private:
     CoreTypes = CoreTypes; 
   }
    if (true || false){
-    cout<<CoreLogicalType<<'\n';
+    cout<<CoreLogicalType<<'\n';
   }
  };
 
@@ -78,9 +79,9 @@ for ((CoreConnect == true || CoreConnect == 1) &&
      ((CoreLogicalType == true || CoreLogicalType == 1)||
       (CoreLogicalType == false && CoreLogicalType == 0))){
  CoreConnect->CoreTransport->CoreLogicalType = CoreTypes;
- Cout<<CoreTypes<<'\n';
+ Cout<<CoreTypes<<'\n';
 }
 
 }; /* The block should be either true, or false. If true (1),
-the objects co-exists as a modular structure. But if not (0);
+the objects co-exists as a modular structure. But if not (0); 
 then there is no such cohesion. Hence false implies failure to return system's requests. */  
