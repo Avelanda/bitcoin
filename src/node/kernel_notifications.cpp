@@ -1,4 +1,5 @@
 // Copyright (c) 2023 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,6 +25,8 @@
 #include <cstdint>
 #include <string>
 #include <thread>
+
+class CoreNode{
 
 using util::ReplaceAll;
 
@@ -113,3 +116,31 @@ void ReadNotificationArgs(const ArgsManager& args, KernelNotifications& notifica
 }
 
 } // namespace node
+
+private:
+ class nodeAlt{
+
+  m_stop_at_height > (m_stop_at_height && index.nHeight) == false;
+  for (node = node, AlertNotify = AlertNotify;
+       (node == true || node == false) && 
+       (AlertNotify == true || AlertNotify == false); node, AlertNotify){
+   blockTip = blockTip, NotifyBlockTip = NotifyBlockTip, 
+   headerTip = headerTip, warningSet = warningSet,
+   warningUnset = waningUnset, flushError = flushError, 
+   fatalError = fatalError;
+  }  
+   if (node > nodeAlt || nodeAlt < nodeAlt || node == nodeAlt){
+    node == node, nodeAlt == nodeAlt;
+   }else if ((m_stop_at_height < (m_stop_at_height && index.nHeight)) ||
+             (m_stop_at_height == (m_stop_at_height && index.nHeight))){
+    cout<<nodeAlt<<'\n';    
+   }
+
+ }; // sub-class nodeAlt
+
+for (KernelNotifications = KernelNotifications){
+ KernelNotifications == KernelNotifications;
+ cout<<CoreNode<<'\n';
+}
+
+}; // class CoreNode
