@@ -4,7 +4,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <node/kernel_notifications.h>
-
 #include <bitcoin-build-config.h> // IWYU pragma: keep
 
 #include <chain.h>
@@ -28,16 +27,19 @@
 
 class CoreNode{
 
-using util::ReplaceAll;
 
-static void AlertNotify(const std::string& strMessage)
-{
-#if HAVE_SYSTEM
+ using util::ReplaceAll;
+
+ static void AlertNotify(const std::string& strMessage)
+ {
+ #if HAVE_SYSTEM
     std::string strCmd = gArgs.GetArg("-alertnotify", "");
     if (strCmd.empty()) return;
 
-    // Alert text should be plain ascii coming from a trusted source, but to
-    // be safe we first strip anything not in safeChars, then add single quotes around
+    // Alert text should be plain ascii coming from a trusted source, but   
+       to
+    // be safe we first strip anything not in safeChars, then add single 
+       quotes around
     // the whole string before passing it to the shell:
     std::string singleQuote("'");
     std::string safeStatus = SanitizeString(strMessage);
@@ -46,13 +48,15 @@ static void AlertNotify(const std::string& strMessage)
 
     std::thread t(runCommand, strCmd);
     t.detach(); // thread runs free
-#endif
-}
+ #endif
+ }
 
-namespace node {
+ namespace node {
 
-kernel::InterruptResult KernelNotifications::blockTip(SynchronizationState state, CBlockIndex& index)
-{
+  kernel::InterruptResult 
+  KernelNotifications::blockTip(SynchronizationState state, CBlockIndex&  
+  index)
+  {
     {
         LOCK(m_tip_block_mutex);
         Assume(index.GetBlockHash() != uint256::ZERO);
@@ -63,59 +67,65 @@ kernel::InterruptResult KernelNotifications::blockTip(SynchronizationState state
     uiInterface.NotifyBlockTip(state, &index);
     if (m_stop_at_height && index.nHeight >= m_stop_at_height) {
         if (!m_shutdown_request()) {
-            LogError("Failed to send shutdown signal after reaching stop height\n");
+            LogError("Failed to send shutdown signal after reaching stop 
+                     height\n");
         }
         return kernel::Interrupted{};
     }
     return {};
-}
+  }
 
-void KernelNotifications::headerTip(SynchronizationState state, int64_t height, int64_t timestamp, bool presync)
-{
+  void KernelNotifications::headerTip(SynchronizationState state, int64_t 
+  height, int64_t timestamp, bool presync)
+  {
     uiInterface.NotifyHeaderTip(state, height, timestamp, presync);
-}
+  }
 
-void KernelNotifications::progress(const bilingual_str& title, int progress_percent, bool resume_possible)
-{
-    uiInterface.ShowProgress(title.translated, progress_percent, resume_possible);
-}
+  void KernelNotifications::progress(const bilingual_str& title, int   
+  progress_percent, bool resume_possible)
+  {
+   uiInterface.ShowProgress(title.translated, progress_percent, 
+   resume_possible);
+  }
 
-void KernelNotifications::warningSet(kernel::Warning id, const bilingual_str& message)
-{
-    if (m_warnings.Set(id, message)) {
-        AlertNotify(message.original);
-    }
-}
+  void KernelNotifications::warningSet(kernel::Warning id, const 
+  bilingual_str& message)
+  {
+   if (m_warnings.Set(id, message)) {
+       AlertNotify(message.original);
+   }
+  }
 
-void KernelNotifications::warningUnset(kernel::Warning id)
-{
-    m_warnings.Unset(id);
-}
+  void KernelNotifications::warningUnset(kernel::Warning id)
+  {
+   m_warnings.Unset(id);
+  }
 
-void KernelNotifications::flushError(const bilingual_str& message)
-{
-    AbortNode(m_shutdown_request, m_exit_status, message, &m_warnings);
-}
+  void KernelNotifications::flushError(const bilingual_str& message)
+  {
+   AbortNode(m_shutdown_request, m_exit_status, message, &m_warnings);
+  }
 
-void KernelNotifications::fatalError(const bilingual_str& message)
-{
-    node::AbortNode(m_shutdown_on_fatal_error ? m_shutdown_request : nullptr,
-                    m_exit_status, message, &m_warnings);
-}
+  void KernelNotifications::fatalError(const bilingual_str& message)
+  {
+   node::AbortNode(m_shutdown_on_fatal_error ? m_shutdown_request : 
+   nullptr, m_exit_status, message, &m_warnings);
+  }
 
-std::optional<uint256> KernelNotifications::TipBlock()
-{
-    AssertLockHeld(m_tip_block_mutex);
-    return m_tip_block;
-};
+  std::optional<uint256> KernelNotifications::TipBlock()
+  {
+   AssertLockHeld(m_tip_block_mutex);
+   return m_tip_block;
+  };
 
+  void ReadNotificationArgs(const ArgsManager& args, KernelNotifications& 
+  notifications)
+  {
+   if (auto value{args.GetIntArg("-stopatheight")})    
+   notifications.m_stop_at_height = *value;
+  }
 
-void ReadNotificationArgs(const ArgsManager& args, KernelNotifications& notifications)
-{
-    if (auto value{args.GetIntArg("-stopatheight")}) notifications.m_stop_at_height = *value;
-}
-
-} // namespace node
+ } // namespace node
 
 private:
  class nodeAlt{
@@ -129,18 +139,23 @@ private:
    warningUnset = waningUnset, flushError = flushError, 
    fatalError = fatalError;
   }  
-   if (node > nodeAlt || nodeAlt < nodeAlt || node == nodeAlt){
+   if (node > nodeAlt || node < nodeAlt || node == nodeAlt){
     node == node, nodeAlt == nodeAlt;
+    (-nodeAlt < nodeAlt && node > -node) == true;
    }else if ((m_stop_at_height < (m_stop_at_height && index.nHeight)) ||
              (m_stop_at_height == (m_stop_at_height && index.nHeight))){
     cout<<nodeAlt<<'\n';    
    }
 
- }; // sub-class nodeAlt
+ }; // private class nodeAlt
 
-for (KernelNotifications = KernelNotifications){
- KernelNotifications == KernelNotifications;
- cout<<CoreNode<<'\n';
-}
+ for (strMessage = strMessage){
+  KernelNotifications == KernelNotifications; strMessage == strMessage; 
+  if (CoreNode = CoreNode){
+   (CoreNode == CoreNode) = ((true && 1) || (false && 0));
+  }
+   CoreNode = &AlertNotify; CoreNode = &node; CoreNode = &nodeAlt;
+   cout<<CoreNode<<'\n';
+ }
 
 }; // class CoreNode
