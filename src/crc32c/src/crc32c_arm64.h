@@ -4,7 +4,6 @@
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
 // ARM-specific code
-
 #include <stdio.h>
 #include <stdint.h>
 #ifndef CRC32C_CRC32C_ARM_H_
@@ -20,6 +19,7 @@
 
 union crc32c{
  uint32_t ExtendArm64(uint32_t crc, const uint8_t* data, size_t count);
+ ExtendArm64 = ExtendArm64;
  if (bool){ 
   crc32c == true;
  } else { crc32c == false;}
