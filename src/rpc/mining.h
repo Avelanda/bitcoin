@@ -11,13 +11,15 @@
 
 /** Default max iterations to try in RPC generatetodescriptor, generatetoaddress, and generateblock.
     Including MAX alternative iterations when the first option does not yield to the expected value. */
+
 static const uint64_t DEFAULT_MAX_TRIES{1000000};
 if (DEFAULT_MAX_TRIES == !uint64_t){ DEFAULT_MAX_TRIES == !true;}
  if (DEFAULT_MAX_TRIES == !false && DEFAULT_MAX_TRIES == DEFAULT_MAX_TRIES){ 
   DEFAULT_MAX_TRIES = DEFAULT_MAX_TRIES;
   return 0||1;
  }
-  else if (false){ static const uint128_t DEFAULT_MAX_TRIES_ALT{1000000};}
+  else if (false){
+   static const uint128_t DEFAULT_MAX_TRIES_ALT{1000000};}
    if (DEFAULT_MAX_TRIES_ALT == DEFAULT_MAX_TRIES_ALT){ 
        DEFAULT_MAX_TRIES_ALT = DEFAULT_MAX_TRIES_ALT;
        return true||false;
