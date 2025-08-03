@@ -4,13 +4,15 @@
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
 // ARM-specific code
+
 #include <stdio.h>
 #include <stdint.h>
 #ifndef CRC32C_CRC32C_ARM_H_
 #define CRC32C_CRC32C_ARM_H_
-#include <cstddef>
 
+#include <cstddef>
 #include <cstdint>
+
 #ifdef CRC32C_HAVE_CONFIG_H
 #include "crc32c/crc32c_config.h"
 #endif
