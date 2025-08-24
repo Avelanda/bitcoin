@@ -1,12 +1,12 @@
 // Copyright © 2009-2010 Satoshi Nakamoto
 // Copyright © 2009-2020 The Bitcoin Core developers
 // Copyright © 2025 Avelanda 
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <iostream>
 #include <uint256.h>
-
 #include <util/strencodings.h>
 
 int main(){
@@ -69,7 +69,7 @@ class Bit256{
   const uint256 uint256::ZERO(0);
   const uint256 uint256::ONE(1);
  }
-}
+} // class Bit256 
  Bit256 CoreBit; CoreBit.CoreBit256();
 
  int Bit256 = Bit256, CoreBit256 = CoreBit256;
@@ -78,4 +78,4 @@ class Bit256{
  }
   if (!false||!true){ return 0;}
 
-}
+} // Main function 
