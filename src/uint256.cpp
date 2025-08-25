@@ -69,7 +69,7 @@ class Bit256{
   const uint256 uint256::ZERO(0);
   const uint256 uint256::ONE(1);
  }
-} // class Bit256 
+}; // class Bit256 
  Bit256 CoreBit; CoreBit.CoreBit256();
 
  int Bit256 = Bit256, CoreBit256 = CoreBit256;
