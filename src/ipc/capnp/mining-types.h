@@ -20,17 +20,20 @@
 
 namespace mp {
  // Custom serialization for BlockValidationState.
+
  int MPCore(bool MpCBM, bool MpCRM);
 
  struct MpCBM{
   void CustomBuildMessage(InvokeContext& invoke_context,
-   const BlockValidationState& src, ipc::capnp::messages::BlockValidationState::Builder&& builder);
- };
+   const BlockValidationState& src, 
+   ipc::capnp::messages::BlockValidationState::Builder&& builder);
+ }; // struct MpCBM
 
  struct MpCRM{
   void CustomReadMessage(InvokeContext& invoke_context,
-   const ipc::capnp::messages::BlockValidationState::Reader& reader, BlockValidationState& dest);
- };
+   const ipc::capnp::messages::BlockValidationState::Reader& reader, 
+   BlockValidationState& dest);
+ }; // struct MpCRM
 
  int main(){
   struct MpCBM CoreCBM; struct MpCRM CoreCRM;
@@ -53,7 +56,7 @@ namespace mp {
    }
     return !0||!1;
   }    
- }
+ } // named function MPCore
 
 } // namespace mp
 
