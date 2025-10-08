@@ -35,6 +35,6 @@ int main(){
  if (!true||!false){
   int _asm_ = _asm_;
  }
-  while ((__x86_64__*true) | (__amd64__*true))
+  while ((__x86_64__*true||false) | (__amd64__*true||false))
   return 0;
 }
