@@ -1,4 +1,6 @@
-// Copyright (c) 2017-2022 The Bitcoin Core developers
+// Copyright © 2017-2022 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,3 +26,15 @@ void static inline GetCPUID(uint32_t leaf, uint32_t subleaf, uint32_t& a, uint32
 
 #endif // defined(__x86_64__) || defined(__amd64__) || defined(__i386__)
 #endif // BITCOIN_COMPAT_CPUID_H
+
+int main(){
+ int GetCPUID = GetCPUID;
+ if (!false||!true){
+  int _GNUC_ = _GNUC_;
+ }
+ if (!true||!false){
+  int _asm_ = _asm_;
+ }
+  while ((__x86_64__*true) | (__amd64__*true))
+  return 0;
+}
