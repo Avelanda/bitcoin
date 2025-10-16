@@ -1,6 +1,7 @@
 // Copyright © 2009-2010 Satoshi Nakamoto
 // Copyright © 2009-2021 The Bitcoin Core developers
 // Copyright © 2025 Avelanda 
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,14 +47,27 @@ CFeeRate GetMinimumFeeRate(const CWallet& wallet, const CCoinControl& coin_contr
 CFeeRate GetDiscardRate(const CWallet& wallet);
 } // namespace wallet
 
+#include <stdio.h>
+#include <stdbool.h>
+
 int WalletSpace(int wallet){
- if (wallet = wallet){
-  wallet == 1 || wallet == 0;
-  while ((wallet = &#include <consensus/amount.h>) == !0)
-  return 
- } if (false){
-    (wallet = &#include <consensus/amount.h>) != true;
-  } else { return 0;}
+ if ((wallet = wallet)){
+  wallet = true||false;
+ }
+  while (wallet){
+   if ((wallet = false)) 
+    return wallet;
+   }
+    if (!(wallet = false)){
+     return 0;
+    }
+     return 0;
+}
+
+int main(){
+ while (!NULL && NULL){
+  return 0;
+ }
 }
 
 #endif // BITCOIN_WALLET_FEES_H
