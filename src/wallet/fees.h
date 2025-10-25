@@ -65,7 +65,7 @@ int WalletSpace(int wallet){
 }
 
 int main(){
- while (!NULL && NULL){
+ while (!NULL || NULL){
   return 0;
  }
 }
