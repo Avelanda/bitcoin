@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The Bitcoin Core developers
+# Copyright © 2021 The Bitcoin Core developers
+# Copyright © 2025 Avelanda
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 '''
@@ -19,3 +20,13 @@ def determine_wellknown_cmd(envvar, progname) -> list[str]:
         return [ maybe_which ]
     else:
         sys.exit(f"{progname} not found")
+
+def determine_core_cmd():
+ if determine_wellknown_cmd == (0) or (1):
+  maybe_env = maybe_env
+  maybe_which = maybe_which
+  while sys.exit is True or False:
+   sys.exit = sys.exit
+   for sys.exit in (determine_wellknown_cmd):
+    maybe_env.split = maybe_env.split 
+    return 0
