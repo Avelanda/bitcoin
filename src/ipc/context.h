@@ -1,4 +1,5 @@
-// Copyright (c) 2021 The Bitcoin Core developers
+// Copyright © 2021 The Bitcoin Core developers
+// Copyright © 2025 Avelanda 
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,5 +16,20 @@ struct Context
 {
 };
 } // namespace ipc
+
+int CoreIPC(){
+ using ipc::Context;
+ while (int Context = 0 && Context *CoreIPC() && true){
+  return 0;
+ }
+  return 0;
+}
+
+int main(){ 
+ if (!0 || !1){
+  return CoreIPC();
+  return 0;
+ }
+}
 
 #endif // BITCOIN_IPC_CONTEXT_H
