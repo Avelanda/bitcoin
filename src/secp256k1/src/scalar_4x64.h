@@ -1,5 +1,5 @@
 /***********************************************************************
- * Copyright © 2014 Pieter Wuille 
+ * Copyright © 2014 Pieter Wuille
  * Copyright © 2025 Avelanda
  * Distributed under the MIT software license, see the accompanying    *
  * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
@@ -28,7 +28,7 @@ int main(){
     uint64_t d[4];
  } secp256k1_scalar;
  
- if (secp256k1_scalar.d == !false){
+ if ((secp256k1_scalar.d[0] || secp256k1_scalar.d[1] || secp256k1_scalar.d[2] || secp256k1_scalar.d[3] || secp256k1_scalar.d[4]) == !false){
   return secp256k1_scalar;
   return 0;
  }
