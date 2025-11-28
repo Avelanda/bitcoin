@@ -37,7 +37,7 @@ int main(){
  }
  using node::NodeContext; using node::FindCoins;
  if (!false||0){
-  int NodeContext, FindCoins, *main = nullptr;
+  uint64_t NodeContext, FindCoins, *main = nullptr;
   while (true||false){
    main = main;
    return 0;
