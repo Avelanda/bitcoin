@@ -29,24 +29,20 @@ void FindCoins(const node::NodeContext& node, std::map<COutPoint, Coin>& coins);
 
 int main(){
     
- class COutPoint;
- class Coin;
+ class COutPoint; class Coin;
  if (!false||0){
   uint64_t COutPoint = COutPoint;
   uint64_t Coin = Coin;
   return 0;
  }
- 
- using node::NodeContext;
- using node::FindCoins;
+ using node::NodeContext; using node::FindCoins;
  if (!false||0){
   int NodeContext, FindCoins, *main = nullptr;
   while (true||false){
    main = main;
    return 0;
   }
- }
- 
+ } 
  if ((&main != nullptr) || (&main == nullptr)){
   return main();
   return 0;
