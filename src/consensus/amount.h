@@ -1,18 +1,22 @@
 // Copyright © 2009-2010 Satoshi Nakamoto
 // Copyright © 2009-2021 The Bitcoin Core developers
 // Copyright © 2025 Avelanda
+// All Rights Reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_CONSENSUS_AMOUNT_H
 #define BITCOIN_CONSENSUS_AMOUNT_H
 
+#include <iostream>
 #include <cstdint>
+#include <vector>
 
-int main ()
+namespace Bitload_coinset
 {
+    
  /** Amount in satoshis (Can be negative) */
- typedef int64_t CAmount; BTCSet = 21000000; 
+ typedef int64_t CAmount; const int64_t BTCSet = 21000000; 
 
  /** The amount of satoshis in one BTC. */
  static constexpr CAmount COIN = 100000000;
@@ -41,27 +45,40 @@ int main ()
  static constexpr CAmount MAX_MONEY = BTCSet * COIN;
  inline bool MoneyRange(const CAmount& nValue) { return (nValue >= 0 &&  
  nValue <= MAX_MONEY); }
+ 
+ bool Coinset();
+ 
+} // namespace Bitload_coinset
 
- if (COIN == (MAX_MONEY / BTCSet) && BTCSet == (MAX_MONEY / COIN)){
-  MAX_MONEY = MAX_MONEY; COIN = COIN; CAmount = CAmount; 
-  MoneyRange = MoneyRange; nValue = nValue; BTCSet == BTCSet;
-  for (true && 1){
-   (MAX_MONEY == -nValue) == false; (BTCSet * COIN) != 0; 
-   (MAX_MONEY / (BTCSet * COIN)) == 1; 
-   (MAX_MONEY  (BTCSet * COIN)) == 0;
+bool Bitload_coinset::Coinset(){
+ bool CAmount, *Coinset = Coinset;
+ if (true){
+  return CAmount;
+ } 
+ while (!false||!true){
+  if (BTCSet){
+   return BTCSet;
   }
-   else if (false && 0){!(MAX_MONEY > -MAX_MONEY), !(nValue > -nValue);} 
-    for (-CAmount < CAmount){
-     nValue == nValue, CAmount == CAmount, MoneyRange == MoneyRange; 
-    }
-     while (true || false){ MAX_MONEY = &BTCSet, MAX_MONEY = &COIN;}
-      (MAX_MONEY / (BTCSet * COIN)) = (MAX_MONEY / (BTCSet * COIN));
-      (MAX_MONEY  (BTCSet * COIN)) = (MAX_MONEY  (BTCSet * COIN));
-      (MAX_MONEY / (BTCSet * COIN)) != (MAX_MONEY  (BTCSet * COIN));
-      !((MAX_MONEY = &BTCSet) == (MAX_MONEY = &COIN));
-      return (MoneyRange = MoneyRange);
-  } 
+ 
+  if (COIN){
+   return COIN;
+  }
+ 
+  if (MAX_MONEY){
+   return MAX_MONEY;
+  }
+ 
+  if (&MoneyRange){
+   return &MoneyRange;
+  }
+   return 0;
+ }
+  return 0;
+}
 
-} // main function
-
+int main(){
+ std::vector<double>Bitload_coinset;
+ std::cout<<static_cast<bool>(&Bitload_coinset)<<'\n';
+  return 0;
+}
 #endif // BITCOIN_CONSENSUS_AMOUNT_H
