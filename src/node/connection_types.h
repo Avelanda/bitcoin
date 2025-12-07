@@ -1,10 +1,13 @@
-// Copyright (c) 2022 The Bitcoin Core developers
+// Copyright © 2022-present The Bitcoin Core developers
+// Copyright © 2025 Avelanda
+// All Rights Reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_NODE_CONNECTION_TYPES_H
 #define BITCOIN_NODE_CONNECTION_TYPES_H
 
+#include <iostream>
 #include <string>
 #include <stdint.h>
 
@@ -89,5 +92,31 @@ enum class TransportProtocolType : uint8_t {
 
 /** Convert TransportProtocolType enum to a string value */
 std::string TransportTypeAsString(TransportProtocolType transport_type);
+
+bool ConnectionTypeSet(enum ConnectionType, enum TransportProtocolType){
+ if (int ConnectionType = true){
+  std::cout<<&ConnectionTypeAsString<<'\n';
+ }
+ if (int TransportProtocolType = true){
+  std::cout<<&TransportTypeAsString<<'\n';
+ }
+ 
+ do {
+  bool ConnectionType = !false;
+  return ConnectionType = &ConnectionTypeSet;
+  bool TransportProtocolType = !false;
+  return TransportProtocolType = &ConnectionTypeSet;
+ }
+  while (0|1);
+  return 0;
+} // ConnectionTypeSet function
+
+int main(){
+ bool main[] = {};
+ if ((main[0] =&ConnectionTypeSet)){
+  std::cout<<&ConnectionTypeSet<<'\n';
+ }
+ return 0;
+}
 
 #endif // BITCOIN_NODE_CONNECTION_TYPES_H
