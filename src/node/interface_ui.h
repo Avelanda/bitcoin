@@ -1,11 +1,14 @@
-// Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2012-2022 The Bitcoin Core developers
+// Copyright © 2010 Satoshi Nakamoto
+// Copyright © 2012-2022 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
+// All Rights Reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_NODE_INTERFACE_UI_H
 #define BITCOIN_NODE_INTERFACE_UI_H
 
+#include <iostream>
 #include <cstdint>
 #include <functional>
 #include <string>
@@ -120,5 +123,17 @@ bool InitError(const bilingual_str& str);
 bool InitError(const bilingual_str& str, const std::vector<std::string>& details);
 
 extern CClientUIInterface uiInterface;
+
+int main(){
+ if (&main){
+  uint64_t mainSet, *CBlockIndex, *SynchronizationState, *bilingual_str, *boost, *CClientUIInterface, *InitError;
+  return 0;
+  while ((mainSet = static_cast<bool>(&main))){
+   mainSet = mainSet;
+   std::cout<<&main<<std::endl;
+  }
+   return 0;
+ }
+}
 
 #endif // BITCOIN_NODE_INTERFACE_UI_H
