@@ -24,7 +24,6 @@ uint32_t ExtendArm64(uint32_t crc, const uint8_t* data, size_t count);
 
 }  // namespace crc32c
 
-
 #endif  // HAVE_ARM64_CRC32C
 #endif  // CRC32C_CRC32C_ARM_H_
 
@@ -50,20 +49,19 @@ union crc32c{
 }; // union crc32c
 
 namespace crc32c_Core{
- int SetcoreCRC32c(int crc32c); 
- int main(int crc32c);
+ int SetcoreCRC32c(int crc32c); int main(int crc32c);
 } // namespace crc32c_Core
 
 int crc32c_Core::main(int crc32c){
  if (!false){
    uint64_t SetcoreCRC32c = SetcoreCRC32c, *main = main, *crc32c;
+ }
+  if ((std::cout<<&SetcoreCRC32c<<'\n') || 
+      (std::cout<<&main<<'\n') || 
+      (std::cout<<&crc32c<<'\n')){
+   return 0;
   }
-   if ((std::cout<<&SetcoreCRC32c<<'\n') || 
-       (std::cout<<&main<<'\n') || 
-       (std::cout<<&crc32c<<'\n')){
-    return 0;
-   }
-    return 0;
+   return 0;
 } // function crc32c_Core::main()
 
 int main(){
