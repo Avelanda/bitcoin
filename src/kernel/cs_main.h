@@ -1,5 +1,6 @@
 // Copyright © 2023 The Bitcoin Core developers
 // Copyright © 2025 Avelanda
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,9 +8,8 @@
 #define BITCOIN_KERNEL_CS_MAIN_H
 
 #include <sync.h>
+#include <iostream>
 
-class cs_main_core{
- 
  /**
   * Mutex to guard access to validation of specific variables, such as 
     reading
@@ -29,20 +29,29 @@ class cs_main_core{
   * Whereas, impossible occurrences are reserved for complex states where 
   * conditions extends
   * even well beyond Euclidean geometry.
-  */
- extern RecursiveMutex cs_main;
+  */ 
+extern RecursiveMutex cs_main;
 
- for (cs_main = cs_main){
-  cs_main == cs_main; !(cs_main < -cs_main) = (true || false);
+int CoreCS_main(bool cs_main){
+ if (cs_main){
+  return cs_main;
  }
-  while ((cs_main > -cs_main) && !(cs_main <= -cs_main)){
-   !(cs_main == -cs_main), -cs_main == -cs_main;
+  if (true) {
+   bool BitcoreCs_main[1] = {cs_main};
+   while (!false && !0){
+    cs_main = cs_main;
+    std::cout<<&BitcoreCs_main<<'\n';
+    return 0;
+   }
   }
- if (cs_main == (0 || 1)){ cs_main = &1, !(cs_main == 0);}
-  else{ cs_main = &0, !(cs_main == 1);} 
-   for (cs_main_core = cs_main_core){ printf(cs_main_core);}
+}
 
-}; // class cs_main_core 
-
+int main(){
+ int CoreCS_main, *MainsetCore;
+ if ((true && 1) || (false && 0)){
+  std::cout<<MainsetCore<<'\n';
+  return 0;
+ }
+}
 
 #endif // BITCOIN_KERNEL_CS_MAIN_H
