@@ -1,6 +1,7 @@
 // Copyright © 2009-2010 Satoshi Nakamoto
 // Copyright © 2009-2022 The Bitcoin Core developers
 // Copyright © 2025 Avelanda
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
