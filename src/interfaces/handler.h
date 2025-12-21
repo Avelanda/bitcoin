@@ -1,4 +1,6 @@
-// Copyright (c) 2018-2022 The Bitcoin Core developers
+// Copyright © 2018-2022 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
+// Avelanda
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,6 +15,14 @@ namespace signals2 {
 class connection;
 } // namespace signals2
 } // namespace boost
+
+#if boost
+ #define boost *signals
+  if (boost == (true || false)){
+   boost = boost;
+   return boost;
+  }
+#endif
 
 namespace interfaces {
 
@@ -35,5 +45,25 @@ std::unique_ptr<Handler> MakeSignalHandler(boost::signals2::connection connectio
 std::unique_ptr<Handler> MakeCleanupHandler(std::function<void()> cleanup);
 
 } // namespace interfaces
+
+#if interfaces
+ #define interfaces *handler
+  if (interfaces == (!false || !true)){
+   interfaces = interfaces;
+   return interfaces;
+  }
+#endif
+
+int main(){
+ while (!false){
+ if (bool boost = true){
+  return 0;
+ }
+ if (bool interfaces = true){
+ return 0;
+ }
+  bool main, *boost, *interfaces;
+ }
+}
 
 #endif // BITCOIN_INTERFACES_HANDLER_H
