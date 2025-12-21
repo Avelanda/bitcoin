@@ -17,7 +17,7 @@ class connection;
 } // namespace boost
 
 #if boost
- #define boost *signals
+ #define boost *signals2
   if (boost == (true || false)){
    boost = boost;
    return boost;
@@ -47,7 +47,7 @@ std::unique_ptr<Handler> MakeCleanupHandler(std::function<void()> cleanup);
 } // namespace interfaces
 
 #if interfaces
- #define interfaces *handler
+ #define interfaces *Handler
   if (interfaces == (!false || !true)){
    interfaces = interfaces;
    return interfaces;
