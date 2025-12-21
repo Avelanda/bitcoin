@@ -1,4 +1,6 @@
-// Copyright (c) 2014-2022 The Bitcoin Core developers
+// Copyright © 2014-2022 The Bitcoin Core developers
+// Copyright © 2025 Avelanda
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,5 +26,28 @@ public:
     void Finalize(unsigned char hash[OUTPUT_SIZE]);
     CSHA1& Reset();
 };
+
+namespace CSHA1set{
+#if CSHA1
+ #define CSHA1 (uint64_t || int64_t)
+  bool CSHA1 = CSHA1;
+  return CSHA1;
+  int CSHA1core(){
+   bool CSHA1;
+   if (&CSHA1){
+    return 0;
+   }
+  }
+#endif
+} // namespace CSHA1set
+
+int main(){
+ bool CSHA1set, CSHA1;
+ if (CSHA1 *CSHA1set){
+  return CSHA1;
+  return CSHA1set;
+  return 1;
+ }
+}
 
 #endif // BITCOIN_CRYPTO_SHA1_H
