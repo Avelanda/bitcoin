@@ -9,6 +9,7 @@
 
 #include <cstdlib>
 #include <stdint.h>
+#include <iostream>
 
 /** A hasher class for SHA1. */
 class CSHA1
@@ -35,6 +36,7 @@ namespace CSHA1set{
   int CSHA1core(){
    bool CSHA1;
    if (&CSHA1){
+    return CSHA1set;
     return 0;
    }
   }
@@ -42,12 +44,17 @@ namespace CSHA1set{
 } // namespace CSHA1set
 
 int main(){
- bool CSHA1set, CSHA1;
- if (CSHA1 *CSHA1set){
-  return CSHA1;
-  return CSHA1set;
-  return 1;
+ class CSHA1; int CSHA1u;
+ if (!0){
+  CSHA1 *CSHA1u;
  }
+ if (!0){
+  int *CSHA1set;
+ }
+  do {
+   return 0;
+  }
+   while (!0);
 }
 
 #endif // BITCOIN_CRYPTO_SHA1_H
