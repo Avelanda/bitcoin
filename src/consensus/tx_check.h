@@ -28,9 +28,9 @@ bool CheckTransaction(const CTransaction& tx, TxValidationState& state);
   }
   
   int tx_Check_Core(){
-   uint32_t Set_tx;
-   if (Set_tx){
-    return Set_tx;
+   uint32_t Set_tx();
+   if (Set_tx()){
+    return Set_tx();
    }
     return 0;
   }
@@ -38,7 +38,7 @@ bool CheckTransaction(const CTransaction& tx, TxValidationState& state);
 
 int main(){
  #if defined(tx_Check_Core)
-  return tx_Check_Core;
+  return tx_Check_Core();
   return 0;
  #endif
 }
