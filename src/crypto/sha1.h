@@ -54,7 +54,7 @@ int main(){
   do {
    return 0;
   }
-   while (!0);
+   while (!0 && !false);
 }
 
 #endif // BITCOIN_CRYPTO_SHA1_H
