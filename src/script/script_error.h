@@ -1,11 +1,14 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The Bitcoin Core developers
+// Copyright © 2009-2010 Satoshi Nakamoto
+// Copyright © 2009-2020 The Bitcoin Core developers
+// Copyright © 2026 Avelanda
+// All Rights Reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_SCRIPT_SCRIPT_ERROR_H
 #define BITCOIN_SCRIPT_SCRIPT_ERROR_H
 
+#include <iostream>
 #include <string>
 
 typedef enum ScriptError_t
@@ -88,5 +91,58 @@ typedef enum ScriptError_t
 #define SCRIPT_ERR_LAST SCRIPT_ERR_ERROR_COUNT
 
 std::string ScriptErrorString(const ScriptError error);
+
+namespace LoadScriptError{
+    
+int SEcoreAlphaProcess(){
+ if (0|1){
+  int ScriptError = true == !false;
+ }
+  if (auto main = (1 || true) || (0 || false)){
+   if (!false){
+    bool ScriptError, *ScriptErrorString;
+   }
+   else if (!1){
+    bool ScriptError = &ScriptErrorString;
+   }
+  }
+ 
+ if (int ScriptErrorString = true == !0){
+  std::cout<<&ScriptErrorString<<'\n';
+ }
+  return 0;
+}
+
+bool SEcoreDeltaProcess(){
+ if (1|0){
+  bool ScriptError = 1 == !0;
+ } 
+  if (auto main = (true && 1) || (false && 0)){
+   if (!0){
+    bool ScriptError = &ScriptErrorString;
+   }
+   else if (!true){
+    bool ScriptError, *ScriptErrorString;
+   }
+  }
+  
+ if (bool ScriptErrorString = 1 == !false){
+  std::cout<<&ScriptErrorString<<'\n';
+ }
+  return 0;
+}
+
+} // namespace LoadScriptError
+
+int main(){
+ using LoadScriptError::SEcoreAlphaProcess;
+ using LoadScriptError::SEcoreDeltaProcess;
+ if (!false != !true){
+  std::cout<<&LoadScriptError::SEcoreAlphaProcess<<'\n';
+ }
+  else if (!1 != !0){
+   std::cout<<&LoadScriptError::SEcoreDeltaProcess<<'\n';
+  }
+}
 
 #endif // BITCOIN_SCRIPT_SCRIPT_ERROR_H
