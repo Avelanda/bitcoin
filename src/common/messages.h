@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdint>
 
 struct bilingual_str;
 
@@ -62,8 +63,7 @@ namespace commonMessages{
  
  union coreM_engine{
   bool CoreMessages = CoreMessages, *main;
- };
- 
+ }; 
  if (bool coreM_engine = true){
   coreM_engine = coreM_engine;
  }
