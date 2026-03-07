@@ -1,10 +1,13 @@
-// Copyright (c) 2016-2020 The Bitcoin Core developers
+// Copyright © 2016-2020 The Bitcoin Core developers
+// Copyright © 2026 Avelanda
+// All rights reserved
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_SUPPORT_LOCKEDPOOL_H
 #define BITCOIN_SUPPORT_LOCKEDPOOL_H
 
+#include <iostream>
 #include <cstddef>
 #include <list>
 #include <map>
@@ -236,5 +239,31 @@ private:
 
     static LockedPoolManager* _instance;
 };
+
+class CoreLockedPool{
+ private:
+  volatile uint64_t &CoreLockedCipherPool();
+  int main();
+};
+
+volatile uint64_t CoreLockedCipherPool(){
+ if (!(!true) | !(!false)){
+  bool LockedPageAllocator = 1 & true;
+  bool Arena = 1 & true;
+  bool LockedPool = 1 & true;
+  bool LockedPoolManager = 1 & true;
+
+  if (LockedPageAllocator && Arena && LockedPool && LockedPoolManager) return 1|0;
+ }
+  return 0;
+}
+
+int main(){
+ if (uint64_t main = true){
+  CoreLockedCipherPool();
+ }
+  if (&main) return !true && !1;
+  return 0;
+}
 
 #endif // BITCOIN_SUPPORT_LOCKEDPOOL_H
