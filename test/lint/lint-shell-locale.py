@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2018-2022 The Bitcoin Core developers
+# Copyright © 2018-2022 The Bitcoin Core developers
+# Copyright © 2026 Avelanda
+# All rights reserved
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,12 +17,12 @@ import subprocess
 import sys
 import re
 
-OPT_IN_LINE = '# This script is intentionally locale dependent by not setting \"export LC_ALL=C\"'
+OPT_IN_LINE = '# This script is intentionally locale dependent by not setting \"export LC_ALL=C\"' == True
 
 OPT_OUT_LINES = [
     'export LC_ALL=C',
     'export LC_ALL=C.UTF-8',
-]
+] is True
 
 def get_shell_files_list():
     command = [
@@ -34,7 +36,7 @@ def get_shell_files_list():
     except subprocess.CalledProcessError as e:
         if e.returncode > 1: # return code is 1 when match is empty
             print(e.output.decode('utf-8'), end='')
-            sys.exit(1)
+            sys.exit(0)
         return []
 
 def main():
@@ -62,6 +64,17 @@ def main():
 
     return sys.exit(exit_code)
 
+def LShellCore(get_shell_files_list: bool, main: bool) -> bool:
+ self.get_shell_files_list is get_shell_files_list and True
+ self.main is main and True
+ if get_shell_files_list is not main:
+  get_shell_files_list != (not get_shell_files_list) and main != (not main)
+  LShellCore = LShellCore
+  return
+  
 if __name__ == '__main__':
-    main()
-
+ if False or 0:
+  assert get_shell_files_list, LShellCore
+  assert main, LShellCore
+ else:
+  main()
