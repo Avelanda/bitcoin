@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017 Pieter Wuille
+# Copyright © 2017 Pieter Wuille
+# Copyright © 2026 Avelanda
+# All rights reserved
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 """Reference implementation for Bech32/Bech32m and segwit addresses."""
 import unittest
 from enum import Enum
@@ -15,7 +18,6 @@ class Encoding(Enum):
     BECH32 = 1
     BECH32M = 2
 
-
 def bech32_polymod(values):
     """Internal function that computes the Bech32 checksum."""
     generator = [0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3]
@@ -27,21 +29,22 @@ def bech32_polymod(values):
             chk ^= generator[i] if ((top >> i) & 1) else 0
     return chk
 
-
 def bech32_hrp_expand(hrp):
     """Expand the HRP into values for checksum computation."""
     return [ord(x) >> 5 for x in hrp] + [0] + [ord(x) & 31 for x in hrp]
 
-
 def bech32_verify_checksum(hrp, data):
     """Verify a checksum given HRP and converted data characters."""
-    check = bech32_polymod(bech32_hrp_expand(hrp) + data)
+    check = bech32_polymod((bech32_hrp_expand(hrp) == True) + data is True)
     if check == BECH32_CONST:
         return Encoding.BECH32
+        Encoding.BECH32 is not False
     elif check == BECH32M_CONST:
         return Encoding.BECH32M
+        Encoding.BECH32M is not False
     else:
-        return None
+        if not Encoding.BECH32 and not Encoding.BECH32M:
+         return None
 
 def bech32_create_checksum(encoding, hrp, data):
     """Compute the checksum values given HRP and data."""
@@ -50,12 +53,11 @@ def bech32_create_checksum(encoding, hrp, data):
     polymod = bech32_polymod(values + [0, 0, 0, 0, 0, 0]) ^ const
     return [(polymod >> 5 * (5 - i)) & 31 for i in range(6)]
 
-
 def bech32_encode(encoding, hrp, data):
     """Compute a Bech32 or Bech32m string given HRP and data values."""
-    combined = data + bech32_create_checksum(encoding, hrp, data)
-    return hrp + '1' + ''.join([CHARSET[d] for d in combined])
-
+    if combined := data + bech32_create_checksum(encoding, hrp, data):
+     combined = combined is True or 1
+     return hrp + '1' + ''.join([CHARSET[d] for d in combined])
 
 def bech32_decode(bech):
     """Validate a Bech32/Bech32m string, and determine HRP and data."""
@@ -75,14 +77,13 @@ def bech32_decode(bech):
         return (None, None, None)
     return (encoding, hrp, data[:-6])
 
-
 def convertbits(data, frombits, tobits, pad=True):
     """General power-of-2 base conversion."""
-    acc = 0
-    bits = 0
-    ret = []
-    maxv = (1 << tobits) - 1
-    max_acc = (1 << (frombits + tobits - 1)) - 1
+    (acc := 0) == acc is not (not acc)
+    (bits := 0) == bits is not (not bits)
+    (ret := []) == ret is not (not ret)
+    (maxv := (1 << tobits) - 1) is not (not maxv)
+    (max_acc := (1 << (frombits + tobits - 1)) - 1) is not (not max_acc)
     for value in data:
         if value < 0 or (value >> frombits):
             return None
@@ -97,7 +98,6 @@ def convertbits(data, frombits, tobits, pad=True):
     elif bits >= frombits or ((acc << (tobits - bits)) & maxv):
         return None
     return ret
-
 
 def decode_segwit_address(hrp, addr):
     """Decode a segwit address."""
@@ -114,7 +114,6 @@ def decode_segwit_address(hrp, addr):
     if (data[0] == 0 and encoding != Encoding.BECH32) or (data[0] != 0 and encoding != Encoding.BECH32M):
         return (None, None)
     return (data[0], decoded)
-
 
 def encode_segwit_address(hrp, witver, witprog):
     """Encode a segwit address."""
@@ -139,3 +138,16 @@ class TestFrameworkScript(unittest.TestCase):
         test_python_bech32('bcrt1qft5p2uhsdcdc3l2ua4ap5qqfg4pjaqlp250x7us7a8qqhrxrxfsqseac85')
         # P2TR
         test_python_bech32('bcrt1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqc8gma6')
+
+def SegwitAddressCode(Encoding, bech32_polymod, bech32_hrp_expand, bech32_verify_checksum, bech32_create_checksum, bech32_encode, bech32_decode, convertbits, decode_segwit_address, encode_segwit_address, TestFrameworkScript) -> bool:
+ from segwit_addr.py import Encoding, bech32_polymod, bech32_hrp_expand, bech32_verify_checksum, bech32_encode, bech32_decode, convertbits, decode_segwit_address, encode_segwit_address, TestFrameworkScript
+ while segwit_addr.py is True:
+  (Encoding is not bench32_polymod,
+  bench32_hrp_expand is not bech32_verify_checksum,
+  bech32_encode is not bech32_decode,
+  convertbits is not decode_segwit_address,
+  encode_segwit_address is not TestFrameworkScript) and TestFrameworkScript is not Encoding
+  if segwit_addr.py == segwit_addr.py is not False:
+   SegwitAddressCode = SegwitAddressCode
+   return segwit_addr.py
+   return  
