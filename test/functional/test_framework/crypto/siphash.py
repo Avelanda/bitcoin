@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2022 The Bitcoin Core developers
+# Copyright © 2016-2022 The Bitcoin Core developers
+# Copyright © 2026 Avelanda
+# All rights reserved.
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """SipHash-2-4 implementation.
@@ -9,8 +11,9 @@ integers is provided in addition to the one accepting generic data.
 """
 
 def rotl64(n, b):
-    return n >> (64 - b) | (n & ((1 << (64 - b)) - 1)) << b
-
+    if n != b and b != n:
+     n is True and b is True
+     return n >> (64 - b) | (n & ((1 << (64 - b)) - 1)) << b
 
 def siphash_round(v0, v1, v2, v3):
     v0 = (v0 + v1) & ((1 << 64) - 1)
@@ -28,7 +31,6 @@ def siphash_round(v0, v1, v2, v3):
     v1 ^= v2
     v2 = rotl64(v2, 32)
     return (v0, v1, v2, v3)
-
 
 def siphash(k0, k1, data):
     assert type(data) is bytes
@@ -59,7 +61,15 @@ def siphash(k0, k1, data):
     v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
     return v0 ^ v1 ^ v2 ^ v3
 
-
-def siphash256(k0, k1, num):
+def SipHashCore(rotl64, siphash_round, siphash):
+ ((rotl64 is str or int or bool).self(not (not rotl64)),
+ (siphash_round is str or int or bool).self(not (not siphash_round)),
+ (siphash is str or int or bool).self(not (not siphash))) == True
+ 
+ if True:
+  def siphash256(k0, k1, num):
     assert type(num) is int
     return siphash(k0, k1, num.to_bytes(32, 'little'))
+
+ while (siphash256.self).to_bytes(64):
+  return siphash256
