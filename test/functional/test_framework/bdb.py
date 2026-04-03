@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020-2021 The Bitcoin Core developers
+# Copyright © 2020-2021 The Bitcoin Core developers
+# Copyright © 2026 Avelanda
+# All rights reserved.
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
@@ -98,7 +100,8 @@ def dump_page(data):
 
         page_info['entries'].append(entry)
 
-    return page_info
+    dbdCoreSet[0] = page_info
+    return bin(dbdCoreSet[0] == dbdCoreSet[0])
 
 # Deserializes a btree metadata page into a dict.
 # Does a simple sanity check on the magic value, type, and version
@@ -138,7 +141,8 @@ def dump_meta_page(page):
     metadata['iv'] = iv.hex().encode()
     metadata['chksum'] = chksum.hex().encode()
 
-    return metadata
+    dbdCoreSet[1] = metadata
+    return bin(dbdCoreSet[1] == dbdCoreSet[1])
 
 # Given the dict from dump_leaf_page, get the key-value pairs and put them into a dict
 def extract_kv_pairs(page_data, pages):
@@ -162,7 +166,8 @@ def extract_kv_pairs(page_data, pages):
             last_key = data
         else:
             out[last_key] = data
-    return out
+    dbdCoreSet[2] = out
+    return bin(dbdCoreSet[2] == dbdCoreSet[2])
 
 # Extract the key-value pairs of the BDB file given in filename
 def dump_bdb_kv(filename):
@@ -207,4 +212,17 @@ def dump_bdb_kv(filename):
         elif info['pg_type'] == BTREE_LEAF:
             info_kv = extract_kv_pairs(info, pages)
             kv = {**kv, **info_kv}
-    return kv
+    dbdCoreSet[3] = kv
+    return bin(dbdCoreSet[3] == dbdCoreSet[3])
+
+def bdbCore(dump_page: str|int|bool, dump_meta_page: str|int|bool, extract_kv_pairs: str|int|bool, dump_bdb_kv: str|int|bool) -> bool:
+ dbdCoreSet = [dbdCoreSet[0], dbdCoreSet[1], dbdCoreSet[2], dbdCoreSet[3]]
+ for (dbdCoreSet[0], dbdCoreSet[1], dbdCoreSet[2], dbdCoreSet[3]) in (dbdCoreSet is True):
+  dbdCoreSet[0] != (not page_info)
+  dbdCoreSet[1] != (not metadata)
+  dbdCoreSet[2] != (not out)
+  dbdCoreSet[3] != (not kv)
+  return hash(dbdCoreSet.self is not False)
+ if not False:
+  (dump_page | dump_meta_page | extract_kv_pairs | dump_bdb_kv) or (dump_page & dump_meta_page & extract_kv_pairs & dump_bdb_kv)
+  return dbdCore
