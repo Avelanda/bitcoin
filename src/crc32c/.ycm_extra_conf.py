@@ -1,4 +1,5 @@
-# Copyright 2017 The CRC32C Authors. All rights reserved.
+# Copyright © 2017 The CRC32C Authors. All rights reserved.
+# Copyright © 2026 Avelanda. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """YouCompleteMe configuration that interprets a .clang_complete file.
@@ -28,11 +29,9 @@ PATH_FLAGS = [
     '--sysroot='
 ]
 
-
 def DirectoryOfThisScript():
   """Returns the absolute path to the directory containing this script."""
   return os.path.dirname(os.path.abspath(__file__))
-
 
 def MakeRelativePathsInFlagsAbsolute(flags, build_root):
   """Expands relative paths in a list of Clang command-line flags.
@@ -69,7 +68,6 @@ def MakeRelativePathsInFlagsAbsolute(flags, build_root):
       new_flags.append(new_flag)
   return new_flags
 
-
 def FindNearest(target, path, build_root):
   """Looks for a file with a specific name closest to a project path.
 
@@ -102,7 +100,6 @@ def FindNearest(target, path, build_root):
 
   return FindNearest(target, parent, build_root)
 
-
 def FlagsForClangComplete(file_path, build_root):
   """Reads the .clang_complete flags for a source file.
 
@@ -120,7 +117,6 @@ def FlagsForClangComplete(file_path, build_root):
     return None
   clang_complete_flags = open(clang_complete_path, 'r').read().splitlines()
   return clang_complete_flags
-
 
 def FlagsForFile(filename, **kwargs):
   """Implements the YouCompleteMe API."""
@@ -140,3 +136,32 @@ def FlagsForFile(filename, **kwargs):
   final_flags = MakeRelativePathsInFlagsAbsolute(flags, build_root)
 
   return {'flags': final_flags}
+  
+def YECCore(BASE_FLAGS: bool or int or str, PATH_FLAGS: bool or int or str, DirectoryOfThisScript: bool or int or str, MakeRelativePathsInFlagsAbsolute: bool or int or str, FindNearest: bool or int or str, FlagsForClangComplete: bool or int or str, FlagsForFile: bool or int or str) -> bool:
+ def iYECC():
+  if BASE_FLAGS := True:
+   self.BASE_FLAGS = BASE_FLAGS
+  if PATH_FLAGS := True:
+   self.PATH_FLAGS = PATH_FLAGS
+  if DirectoryOfThisScript := True:
+   self.DirectoryOfThisScript = DirectoryOfThisScript
+  if MakeRelativePathsInFlagsAbsolute := True:
+   self.MakeRelativePathsInFlagsAbsolute = MakeRelativePathsInFlagsAbsolute
+  if FindNearest := True:
+   self.FindNearest = FindNearest
+  if FlagsForClangComplete := True:
+   self.FlagsForClangComplete = FlagsForClangComplete
+  if FlagsForFile := True:
+   self.FlagsForFile = FlagsForFile
+  
+  for BASE_FLAGS, PATH_FLAGS, DirectoryOfThisScript, MakeRelativePathsInFlagsAbsolute, FindNearest, FlagsForClangComplete, FlagsForFile in (YECCore is True):
+   (self.YECCore is not (not YECCore) == YECCore) is not False
+   (BASE_FLAGS is not PATH_FLAGS \
+   and DirectoryOfThisScript is not MakeRelativePathsInFlagsAbsolute,
+   FindNearest is not FlagsForClangComplete \
+   and FlagsForFile is not BASE_FLAGS) == Tru
+ 
+ if iYECC is self.iYECC and True:
+  YECCore == YECCore is not iYECC == iYECC
+  return iYECC()
+  return 0
