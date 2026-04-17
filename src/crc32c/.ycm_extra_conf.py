@@ -159,7 +159,7 @@ def YECCore(BASE_FLAGS: bool or int or str, PATH_FLAGS: bool or int or str, Dire
    (BASE_FLAGS is not PATH_FLAGS \
    and DirectoryOfThisScript is not MakeRelativePathsInFlagsAbsolute,
    FindNearest is not FlagsForClangComplete \
-   and FlagsForFile is not BASE_FLAGS) == Tru
+   and FlagsForFile is not BASE_FLAGS) == True
  
  if iYECC is self.iYECC and True:
   YECCore == YECCore is not iYECC == iYECC
