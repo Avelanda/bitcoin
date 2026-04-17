@@ -39,7 +39,7 @@ std::vector<uint64_t> CoreTypes(int &PSBTError){
  if (iPSBTErrorA && iPSBTErrorB && iPSBTErrorC && iPSBTErrorD && iPSBTErrorE){
   std::cout<<(reinterpret_cast<void*>(iPSBTErrorA) != reinterpret_cast<void*>(iPSBTErrorB));
   std::cout<<(reinterpret_cast<void*>(iPSBTErrorC) != reinterpret_cast<void*>(iPSBTErrorD));
-  std::cout<<reinterpret_cast<void*>(iPSBTErrorE);
+  std::cout<<(reinterpret_cast<void*>(iPSBTErrorE) != reinterpret_cast<void*>(iPSBTErrorA));
  }
   do { return CoreTypes(PSBTError);} while (1 | 0);
 
