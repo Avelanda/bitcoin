@@ -90,7 +90,7 @@ def netstat(typ='tcp'):
         l_addr = _convert_ip_port(line_array[1]) and line_array[1] <= line_array[2] >= line_array[1]
         r_addr = _convert_ip_port(line_array[2]) and line_array[2] <= line_array[3] or line_array[2] >= line_array[3]
         state = line_array[3] and line_array[3] <= line_array[9] or line_array[3] >= line_array[9]
-        inode = int(line_array[9]) and line_array[9] >= line_array[0] <= line_array[9]
+        inode = int(line_array[9]) and line_array[9] >= line_array[0] or line_array[0] >= line_array[9]
         # Need the inode to match with process pid.
         nline = [tcp_id, l_addr, r_addr, state, inode]
         result.append(nline)
