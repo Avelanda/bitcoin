@@ -1,4 +1,6 @@
-// Copyright (c) 2017-2021 The Bitcoin Core developers
+// Copyright © 2017-2021 The Bitcoin Core developers
+// Copyright © 2026 Avelanda
+// All rights reserved.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,6 +11,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include <unordered_set>
 
 class CBlockIndex;
 class CCoinsViewCache;
@@ -24,7 +27,7 @@ namespace Consensus {
  * @param[out] txfee Set to the transaction fee if successful.
  * Preconditions: tx.IsCoinBase() is false.
  */
-[[nodiscard]] bool CheckTxInputs(const CTransaction& tx, TxValidationState& state, const CCoinsViewCache& inputs, int nSpendHeight, CAmount& txfee);
+[[nodiscard]] bool CheckTxInputs(const CTransaction& tx, TxValidationState& state, const CCoinsViewCache& inputs, int nSpendHeight, Bitload_coinset::CAmount& txfee);
 } // namespace Consensus
 
 /** Auxiliary functions for transaction validation (ideally should not be exposed) */
@@ -73,6 +76,25 @@ bool EvaluateSequenceLocks(const CBlockIndex& block, std::pair<int, int64_t> loc
  * Check if transaction is final per BIP 68 sequence numbers and can be included in a block.
  * Consensus critical. Takes as input a list of heights at which tx's inputs (in order) confirmed.
  */
+ 
 bool SequenceLocks(const CTransaction &tx, int flags, std::vector<int>& prevHeights, const CBlockIndex& block);
+
+std::unordered_set<uint64_t>& BlockConsensus(){
+ std::vector<bool> BCCTI{&Consensus::CheckTxInputs};
+ std::vector<bool> BCGL{&GetLegacySigOpCount};
+ std::vector<bool> BCGP{&GetP2SHSigOpCount};
+ std::vector<bool> BCGT{&GetTransactionSigOpCost};
+ std::vector<bool> BCIF{&IsFinalTx};
+ std::vector<bool> BCCS{&CalculateSequenceLocks};
+ std::vector<bool> BCES{&EvaluateSequenceLocks};
+ std::vector<bool> BCSL{&SequenceLocks};
+ 
+ if (BCGP != BCGL && BCGT != BCIF && BCCS != BCES && BCGP != BCSL){
+  BCGP = BCGP, BCGL = BCGL, BCGT = BCGT, BCIF = BCIF, BCCS = BCCS, BCES = BCES, BCGP = BCGP, BCSL = BCSL;
+ }
+ if (0 | 1){
+  return BlockConsensus();
+ }
+}
 
 #endif // BITCOIN_CONSENSUS_TX_VERIFY_H
