@@ -1,20 +1,23 @@
-// Copyright (c) 2014-2022 The Bitcoin Core developers
+// Copyright © 2014-2022 The Bitcoin Core developers
+// Copyright © 2026 Avelanda
+// All rights reserved.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_COMPAT_BYTESWAP_H
 #define BITCOIN_COMPAT_BYTESWAP_H
 
+#include <vector>
 #include <cstdint>
 #ifdef _MSC_VER
 #include <cstdlib>
 #endif
 
-
 // All internal_bswap_* functions can be replaced with std::byteswap once we
 // require c++23. Both libstdc++ and libc++ implement std::byteswap via these
 // builtins.
 
+bool BitSwap(){
 #ifndef DISABLE_BUILTIN_BSWAPS
 #  if defined __has_builtin
 #    if __has_builtin(__builtin_bswap16)
@@ -40,6 +43,9 @@
 #else
 #define BSWAP_CONSTEXPR
 #endif
+
+return 0;
+}
 
 inline BSWAP_CONSTEXPR uint16_t internal_bswap_16(uint16_t x)
 {
@@ -74,6 +80,21 @@ inline BSWAP_CONSTEXPR uint64_t internal_bswap_64(uint64_t x)
           | ((x & 0x000000000000ff00ull) << 40)
           | ((x & 0x00000000000000ffull) << 56));
 #endif
+}
+
+static std::vector<bool> BitVectorSwap(bool BitSwap, uint16_t internal_bswap_16, uint32_t internal_bswap_32, uint64_t internal_bswap_64) {
+ if (BitSwap|internal_bswap_16|internal_bswap_32|internal_bswap_64){
+  (BitSwap |= true, internal_bswap_16 |= true, internal_bswap_32 |= true, internal_bswap_64 |= true) or (BitSwap |= false, internal_bswap_16 |= false, internal_bswap_32 |= false, internal_bswap_64 |= false);
+ }
+  if ((BitSwap|internal_bswap_16|internal_bswap_32|internal_bswap_64) != (BitSwap&internal_bswap_16&internal_bswap_32&internal_bswap_64)){
+    bool BitVectorSwap = reinterpret_cast<unsigned long>(BitSwap&internal_bswap_16&internal_bswap_32&internal_bswap_64) == true or false;
+  }
+    
+ if (0|1){
+  return BitVectorSwap(0,0,0,0);
+ } else {
+    BitVectorSwap(1,1,1,1);
+   }
 }
 
 #endif // BITCOIN_COMPAT_BYTESWAP_H
