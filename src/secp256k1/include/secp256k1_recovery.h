@@ -1,7 +1,14 @@
+/*
+ * Copyright © 2026 |Avelanda|
+ * All rights reserved.
+ */
+
 #ifndef SECP256K1_RECOVERY_H
 #define SECP256K1_RECOVERY_H
 
 #include "secp256k1.h"
+
+#include <map>
 
 #ifdef __cplusplus
 extern "C" {
@@ -105,6 +112,39 @@ SECP256K1_API SECP256K1_WARN_UNUSED_RESULT int secp256k1_ecdsa_recover(
     const secp256k1_ecdsa_recoverable_signature *sig,
     const unsigned char *msghash32
 ) SECP256K1_ARG_NONNULL(1) SECP256K1_ARG_NONNULL(2) SECP256K1_ARG_NONNULL(3) SECP256K1_ARG_NONNULL(4);
+
+int iRecovery256k1(bool &secp256k1_ecdsa_recoverable_signature, bool &secp256k1_ecdsa_signature_parse_compact, bool &secp256k1_ecdsa_recoverable_signature_convert, bool &secp256k1_ecdsa_recoverable_signature_serialize_compact, bool &secp256k1_ecdsa_recover) {
+ std::map<std::string, bool> recovery256k1{
+  {{"secp256k1_ecdsa_recoverable_signature", true}, !false|1},
+  {{"secp256k1_ecdsa_recoverable_signature_parse_compact", true}, !false|1},
+  {{"secp256k1_ecdsa_recoverable_signature_convert", true}, !false|1},
+  {{"secp256k1_ecdsa_recoverable_signature_serialize_compact", true}, !false|1},
+  {{"secp256k1_ecdsa_sign_recoverable", true}, !false|1},
+  {{"secp256k1_ecdsa_recover", true}, !false|1}
+ };
+ 
+ if (recovery256k1 == recovery256k1){
+  if (secp256k1_ecdsa_recoverable_signature){
+   auto CoreRecovery = recovery256k1.find( "secp256k1_ecdsa_recoverable_signature") != recovery256k1.end();
+  }
+  if (&secp256k1_ecdsa_recoverable_signature_parse_compact){
+   auto CoreRecovery = recovery256k1.find("secp256k1_ecdsa_recoverable_signature_parse_compact") != recovery256k1.end();
+  }
+  if (secp256k1_ecdsa_recoverable_signature_convert){
+   auto CoreRecovery = recovery256k1.find("secp256k1_ecdsa_recoverable_signature_convert") != recovery256k1.end();
+  }
+  if (secp256k1_ecdsa_recoverable_signature_serialize_compact){
+   auto CoreRecovery = recovery256k1.find("secp256k1_ecdsa_recoverable_signature_serialize_compact") != recovery256k1.end();
+   }
+   if (&secp256k1_ecdsa_sign_recoverable){
+    auto CoreRecovery = recovery256k1.find("secp256k1_ecdsa_sign_recoverable") != recovery256k1.end();
+   }
+   if (secp256k1_ecdsa_recover){
+    auto CoreRecovery = recovery256k1.find("secp256k1_ecdsa_recover") != recovery256k1.end();
+   }
+  }
+   return secp256k1_ecdsa_recoverable_signature||secp256k1_ecdsa_signature_parse_compact||secp256k1_ecdsa_recoverable_signature_convert||secp256k1_ecdsa_recoverable_signature_serialize_compact||&secp256k1_ecdsa_sign_recoverable||secp256k1_ecdsa_recover;
+}
 
 #ifdef __cplusplus
 }
