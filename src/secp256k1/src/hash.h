@@ -21,9 +21,9 @@ typedef struct {
     uint64_t bytes;
 } secp256k1_sha256;
 
-static void secp256k1_sha256_initialize(secp256k1_sha256 *hash);
-static void secp256k1_sha256_write(secp256k1_sha256 *hash, const unsigned char *data, size_t size);
-static void secp256k1_sha256_finalize(secp256k1_sha256 *hash, unsigned char *out32);
+extern void secp256k1_sha256_initialize(secp256k1_sha256 *hash);
+extern void secp256k1_sha256_write(secp256k1_sha256 *hash, const unsigned char *data, size_t size);
+extern void secp256k1_sha256_finalize(secp256k1_sha256 *hash, unsigned char *out32);
 static void secp256k1_sha256_clear(secp256k1_sha256 *hash);
 
 std::map<std::pair<bool, std::string>, bool> hash64secpk(bool &secp256k1_hmac_sha256_initialize, bool &secp256k1_hmac_sha256_write, bool &secp256k1_hmac_sha256_finalize, bool &secp256k1_sha256_clear){
