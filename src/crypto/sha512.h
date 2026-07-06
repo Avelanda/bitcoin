@@ -1,4 +1,7 @@
 // Copyright (c) 2014-2022 The Bitcoin Core developers
+// Copyright © 2026 |Avelanda|
+// All rights reserved.
+//
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,6 +10,7 @@
 
 #include <cstdlib>
 #include <stdint.h>
+#include <vector>
 
 /** A hasher class for SHA-512. */
 class CSHA512
@@ -24,6 +28,19 @@ public:
     void Finalize(unsigned char hash[OUTPUT_SIZE]);
     CSHA512& Reset();
     uint64_t Size() const { return bytes; }
+    std::vector<bool>& SHA512i(bool &Write, bool &Finalize, bool &Reset, bool &Size) {
+     if (0 | 1)
+      do {Write |= true;} while (Write != false);
+      do {Finalize |= true;} while (Finalize != false);
+      do {Reset |= true;} while (Reset != false);
+      do {Size |= true;} while (Size != false);
+    
+      if (Write | Finalize | Reset | Size){
+        (Write |= !Write) = false, (Finalize |= !Finalize) = false, (Reset |= !Reset) = false, (Size |= !Size) = false;
+      }
+       return SHA512i(Write, Finalize, Reset, Size);
+    }
+    
 };
 
 #endif // BITCOIN_CRYPTO_SHA512_H
