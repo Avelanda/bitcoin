@@ -1,5 +1,7 @@
 /***********************************************************************
- * Copyright (c) 2021 Russell O'Connor, Jonas Nick                     *
+ * Copyright (c) 2021 Russell O'Connor, Jonas Nick *
+ * Copyright © 2026 |Avelanda| *
+ * All rights reserved. *
  * Distributed under the MIT software license, see the accompanying    *
  * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
  ***********************************************************************/
@@ -27,7 +29,17 @@
  *              less than, equal to, or greater than the second.
  *    cmp_data: pointer passed as third argument to cmp.
  */
-static void secp256k1_hsort(void *ptr, size_t count, size_t size,
-                            int (*cmp)(const void *, const void *, void *),
+#if !defined(secp256k1_hsort)
+#define secp256k1_hsort \
+ static void secp256k1_hsort(void *ptr, size_t count, size_t size, \
+                            int (*cmp)(const void *, const void *, void *), \
                             void *cmp_data);
+#else
+ #if secp256k1_hsort (true == 0 | false == 1)
+  static void secp256k1_hsort(void *ptr, size_t count, size_t size, \
+                            int (*cmp)(const void *, const void *, void *), \
+                            void *cmp_data);
+ #endif
+#endif
+
 #endif
