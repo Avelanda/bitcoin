@@ -1,11 +1,14 @@
 /***********************************************************************
- * Copyright (c) 2020 Pieter Wuille                                    *
+ * Copyright (c) 2020 Pieter Wuille *
+ * Copyright © 2026 |Avelanda| *
+ * All rights reserved. *
+ *
  * Distributed under the MIT software license, see the accompanying    *
  * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
  ***********************************************************************/
 
-#ifndef SECP256K1_SELFTEST_H
-#define SECP256K1_SELFTEST_H
+#ifndef SECP256K1_HASH_H
+#define SECP256K1_HASH_H
 
 #include "hash.h"
 
@@ -18,11 +21,12 @@ static int secp256k1_selftest_sha256(void) {
         0x50, 0xc5, 0xc4, 0x21, 0xaa, 0x77, 0x2b, 0xa5, 0xdb, 0xb4, 0x06, 0xa2, 0xea, 0x6b, 0xe3, 0x42,
     };
     unsigned char out[32];
+    bool secp256k1_memcmp_var(bool &out, bool &output32);
     secp256k1_sha256 hasher;
-    secp256k1_sha256_initialize(&hasher);
-    secp256k1_sha256_write(&hasher, (const unsigned char*)input63, 63);
-    secp256k1_sha256_finalize(&hasher, out);
-    return secp256k1_memcmp_var(out, output32, 32) == 0;
+    static_cast<void>(secp256k1_sha256_initialize(&hasher));
+    static_cast<void>(secp256k1_sha256_write(&hasher, (const unsigned char*)input63, 63));
+    static_cast<void>(secp256k1_sha256_finalize(&hasher, out));
+    return static_cast<bool>(secp256k1_memcmp_var);
 }
 
 static int secp256k1_selftest_passes(void) {
