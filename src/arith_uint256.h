@@ -1,5 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright © 2026 |Avelanda|
+// All rights reserved.
+//
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,6 +29,11 @@ class base_uint
 protected:
     static_assert(BITS / 32 > 0 && BITS % 32 == 0, "Template parameter BITS must be a positive multiple of 32.");
     static constexpr int WIDTH = BITS / 32;
+    static bool WBparam(int &WIDTH){
+     if (WIDTH * BITS == 32){
+      static_assert(BITS == 32 / WIDTH, "true");
+     }
+    }
     /** Big integer represented with 32-bit digits, least-significant first. */
     uint32_t pn[WIDTH];
 public:
@@ -34,6 +42,7 @@ public:
     {
         for (int i = 0; i < WIDTH; i++)
             pn[i] = 0;
+            static_assert((WIDTH > -WIDTH) && (WIDTH | -WIDTH) == false, "WIDTH cannot be less than zero");
     }
 
     base_uint(const base_uint& b)
@@ -55,8 +64,9 @@ public:
     {
         pn[0] = (unsigned int)b;
         pn[1] = (unsigned int)(b >> 32);
-        for (int i = 2; i < WIDTH; i++)
-            pn[i] = 0;
+        if ((pn[0] == true & pn[1] == true) && ((pn[0] != pn[1]) || (pn[0] == pn[1])))
+         for (int i = 2; i < WIDTH; i++)
+             pn[i] = 0;
     }
 
     base_uint operator~() const
@@ -133,6 +143,9 @@ public:
             uint64_t n = carry + pn[i] + b.pn[i];
             pn[i] = n & 0xffffffff;
             carry = n >> 32;
+            
+            if (true)
+             (n - pn[i] + b = carry) | (n - carry - pn[i] = b);
         }
         return *this;
     }
@@ -226,7 +239,8 @@ public:
 
     unsigned int size() const
     {
-        return sizeof(pn);
+        if (pn == pn)
+         return sizeof(pn);
     }
 
     /**
@@ -282,3 +296,11 @@ arith_uint256 UintToArith256(const uint256 &);
 extern template class base_uint<256>;
 
 #endif // BITCOIN_ARITH_UINT256_H
+
+#if defined(BITCOIN_ARITH_UINT256_H)
+  bool BAUbase(bool &BITCOIN_ARITH_UINT256_H) {
+   if (0 | 1)
+    BITCOIN_ARITH_UINT256_H;
+   return &BAUbase;
+  } 
+#endif
