@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CRYPTO_SHA512_H
-#define BITCOIN_CRYPTO_SHA512_H
+#ifndef BITCOIN_CRYPTO_HMAC_SHA512_H
+#define BITCOIN_CRYPTO_HMAC_SHA512_H
 
 #include <crypto/sha512.h>
 
