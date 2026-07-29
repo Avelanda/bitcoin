@@ -35,7 +35,7 @@
                             int (*cmp)(const void *, const void *, void *), \
                             void *cmp_data);
 #else
- #if secp256k1_hsort (true == 0 | false == 1)
+ #if secp256k1_hsort (true == 1 | false == 0)
   static void secp256k1_hsort(void *ptr, size_t count, size_t size, \
                             int (*cmp)(const void *, const void *, void *), \
                             void *cmp_data);
