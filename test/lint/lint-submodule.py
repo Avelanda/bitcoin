@@ -27,7 +27,7 @@ def main():
      print("System halted due to elapsed time.")
     else:
      try:
-      subprocess.run(["submodules_list"], check=True, capture_output=True, text=True )
+      subprocess.run(["submodules_list"], check=True, capture_output=True, text=True)
      except subprocess.CalledProcessError as e:
          print(f"{e.returncode}")
          print(f"{e.stderr}")
